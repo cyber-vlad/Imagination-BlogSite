@@ -1,0 +1,112 @@
+﻿@model Imagination.Application.DTOs.PaginatedListDto<Imagination.Application.DTOs.PostDto>
+
+<nav>
+    <ul class="pagination custom-pagination">
+        <li class="page-item @(Model.PageIndex == 1 ? "disabled":"")">
+            <a class="page-link" asp-route-pageIndex="1">
+                <span>⏮ First</span>
+            </a>
+        </li>
+        <li class="page-item @(Model.HasPreviousPage ? "":"disabled")">
+            <a class="page-link" asp-route-pageIndex="@(Model.PageIndex - 1)">
+                <span>◀ Previous</span>
+            </a>
+        </li>
+
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(Model.PageIndex == i ? "active":"")">
+                <a class="page-link" asp-route-pageIndex="@i">@i</a>
+            </li>
+        }
+
+        <li class="page-item @(Model.HasNextPage ? "":"disabled")">
+            <a class="page-link" asp-route-pageIndex="@(Model.PageIndex + 1)">
+                <span>Next ▶</span>
+            </a>
+        </li>
+        <li class="page-item @(Model.PageIndex == Model.TotalPages ? "disabled":"")">
+            <a class="page-link" asp-route-pageIndex="@(Model.TotalPages)">
+                <span>Last ⏭</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Story Box -->
+@foreach (var post in Model.Items)
+{
+    <div class="border border-light p-2 mb-3" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); background:#f8f9fa;">
+        <div class="d-flex align-items-start">
+            @if (!string.IsNullOrEmpty(post.Author.PhotoUrl))
+            {
+                <img class="me-2 avatar-sm rounded-circle" id="profileImage" src="@Url.Content(post.Author.PhotoUrl)" />
+            }
+            else
+            {
+                <img class="me-2 avatar-sm rounded-circle" id="profileImage" src="~/assets/img/profile/avatar.jpg">
+            }
+            <div class="w-100">
+                <input type="hidden" name="PostId" value="@post.PostId">
+                <input type="hidden" name="UserId" value="@currentUserService.UserId">
+                <h5 class="">@post.Author.Username <small class="text-muted">@post.DateOfCreation.ToString("M/d/yyy")</small></h5>
+                <a href="#"><p>@post.Title</p></a>
+                @{
+                    string content = @post.Content;
+                    int n = 140;
+                    string subText = content.Substring(0, Math.Min(n, content.Length));
+
+                    int index = subText.Length;
+
+                    while (index < content.Length && char.IsLetter(content[index]))
+                    {
+                        subText += content[index++];
+                    }
+
+                    @subText
+                }
+                <br>
+            </div>
+        </div>
+
+        <div class="mt-2">
+           <button class="btn btn-sm btn-link @(post.IsLikedByCurrentUser ? "text-danger" : "text-muted") like-btn"
+                data-post-id="@post.PostId"
+                data-user-id="@currentUserService.UserId"
+                data-is-liked="@post.IsLikedByCurrentUser.ToString().ToLower()">
+            <i class="mdi mdi-heart"></i> Like (<span id="like-count-@post.PostId">@post.NrLikes</span>)
+            </button>
+            <div class="btn btn-sm btn-link text-muted"><i class="mdi mdi-comment-multiple-outline"></i> Comments (0)</div>
+        </div>
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+        $(".like-btn").click(function () {
+            var postId = $(this).data("post-id");
+            var userId = $(this).data("user-id");
+            var button = $(this);
+            var likeCountSpan = $("#like-count-" + postId);
+
+            $.ajax({
+                url: "@Url.Action("ToggleLike", "Home")",
+                type: "POST",
+                data: { postId: postId, userId: userId },
+                success: function (response) {
+                    if (response.success) {
+                        likeCountSpan.text(response.likeCount);
+
+                        if (response.isLiked) {
+                            button.removeClass("text-muted").addClass("text-danger");
+                            button.data("is-liked", "true");
+                        } else {
+                            button.removeClass("text-danger").addClass("text-muted");
+                            button.data("is-liked", "false");
+                        }
+                    }
+                }
+            });
+        });
+    });
+</script>

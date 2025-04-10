@@ -1,0 +1,12 @@
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\bin\Debug\net8.0\Imagination.Domain.deps.json
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\bin\Debug\net8.0\Imagination.Domain.dll
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\bin\Debug\net8.0\Imagination.Domain.pdb
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\obj\Debug\net8.0\Imagination.Domain.csproj.AssemblyReference.cache
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\obj\Debug\net8.0\Imagination.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\obj\Debug\net8.0\Imagination.Domain.AssemblyInfoInputs.cache
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\obj\Debug\net8.0\Imagination.Domain.AssemblyInfo.cs
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\obj\Debug\net8.0\Imagination.Domain.csproj.CoreCompileInputs.cache
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\obj\Debug\net8.0\Imagination.Domain.dll
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\obj\Debug\net8.0\refint\Imagination.Domain.dll
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\obj\Debug\net8.0\Imagination.Domain.pdb
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Domain\obj\Debug\net8.0\ref\Imagination.Domain.dll

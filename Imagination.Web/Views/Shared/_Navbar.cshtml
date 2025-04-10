@@ -1,0 +1,71 @@
+﻿<header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+        @if(User.Identity.IsAuthenticated)
+        {
+            <a asp-controller="Home" asp-action="Dashboard" class="logo d-flex align-items-center me-auto">
+                <h1 class="sitename"><b>Imagination</b></h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Dashboard" class="active">Dashboard<br></a></li>
+                    <li><a href="#services">Services</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        }
+        else
+        {
+            <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center me-auto">
+                <h1 class="sitename"><b>Imagination</b></h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index" class="active">Home<br></a></li>
+                    <li><a href="#services">Services</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        }
+
+        @if(User.Identity.IsAuthenticated)
+        {
+            <div class="action">
+                <div class="profile" onclick="menuToggle();">
+                    | @currentUserService.Username
+                    <img src="~/assets/img/dropdown-menu/right-arrow.png" style="width:10px" />
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <img src="~/assets/img/dropdown-menu/profile-user.png" />
+                            <form asp-controller="Profile" asp-action="Index" method="get" class="dropdown-form">
+                                <button type="submit" class="dropdown-button">Profile</button>
+                            </form>
+                        </li>
+                        <li>
+                            <img src="~/assets/img/dropdown-menu/log-out.png" />
+                            <form asp-controller="Account" asp-action="Logout" method="post" class="dropdown-form">
+                                <button type="submit" class="dropdown-button">Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <script>
+                function menuToggle() 
+                {
+                    const toggleMenu = document.querySelector(".menu");
+                    toggleMenu.classList.toggle("active");
+                }
+            </script>
+        }
+        else
+        {
+            <a asp-controller="Account" asp-action="Login" class="btn-getstarted">Login</a>
+        }
+
+    </div>
+</header>

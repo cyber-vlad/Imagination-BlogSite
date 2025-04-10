@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Imagination</title>
+
+    <!-- Favicon -->
+    <link href="/assets/img/icon.png" rel="icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/auth_style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/registrations/registration-9/assets/css/registration-9.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-9 mx-auto">
+                <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                    
+                        @RenderBody()
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var errorMessage = '@TempData["ErrorMessage"]';
+            var successMessage = '@TempData["SuccessMessage"]';
+            if (errorMessage) {
+                toastr.error(errorMessage);
+            }
+            if (successMessage) {
+                toastr.success(successMessage);
+            }
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

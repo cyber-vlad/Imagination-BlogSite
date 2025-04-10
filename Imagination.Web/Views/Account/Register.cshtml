@@ -1,0 +1,45 @@
+﻿@model Imagination.Application.DTOs.RegisterDto;
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+<div class="card-img-left register d-none d-md-flex"></div>
+<div class="card-body p-4 p-sm-5">
+    <h5 class="card-title text-center fw-light fs-5">Register</h5>
+    <p class="m-0 mb-4 text-secondary text-center">Create personal account</p>
+
+    <form asp-controller="Account" asp-action="Register" method="POST" autocomplete="off">
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="Username" id="Username" asp-for="Username" placeholder="Username" required>
+            <label for="Username">Username</label>
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" name="Email" id="Email" asp-for="Email" placeholder="name@example.com" required>
+            <label for="Email">Email address</label>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" name="Password" id="Password" asp-for="Password" placeholder="Password" required>
+            <label for="Password">Password</label>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm Password" required>
+            <label for="ConfirmPassword">Confirm Password</label>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <div class="d-grid mb-2">
+            <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Register</button>
+        </div>
+
+        <p class="m-0 text-secondary text-center">Have an account? <a asp-controller="Account" asp-action="Login" class="link-primary text-decoration-none">Sign in</a></p>
+        <p class="m-0 text-secondary text-center">Go back to <a asp-controller="Home" asp-action="Index" class="link-primary text-decoration-none">Home</a></p>
+
+    </form>
+</div>

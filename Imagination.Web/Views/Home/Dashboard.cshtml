@@ -1,0 +1,250 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-start">
+                        @if (!string.IsNullOrEmpty(currentUserService.PhotoUrl))
+                        {
+                            <img id="profileImage" src="@Url.Content(currentUserService.PhotoUrl)" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image" />
+                        }
+                        else
+                        {
+                            <img id="profileImage" src="~/assets/img/profile/avatar.jpg" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
+                        }
+                        <div class="w-100 ms-3" style="padding-top:50px;">
+                            <h4 class="my-0">@currentUserService.Username</h4>
+                            <p class="text-muted">webdesigner</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h4 class="font-13 text-uppercase">About Me :</h4>
+                        <p class="text-muted font-13 mb-3">
+                            Hi I'm Johnathn Deo,has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+                        </p>
+                    </div>
+                </div>
+            </div> <!-- end card -->
+
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div class="col-4 border-end border-light">
+                            <h5 class="text-muted mt-1 mb-2 fw-normal">Likes</h5>
+                            <h2 class="mb-0 fw-bold">116</h2>
+                        </div>
+                        <div class="col-4 border-end border-light">
+                            <h5 class="text-muted mt-1 mb-2 fw-normal">Comments</h5>
+                            <h2 class="mb-0 fw-bold">87</h2>
+                        </div>
+                        <div class="col-4">
+                            <h5 class="text-muted mt-1 mb-2 fw-normal">Posts</h5>
+                            <h2 class="mb-0 fw-bold">98</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end col-->
+
+        <div class="col-xl-7">
+            <div class="card">
+                <div class="card-body">
+                    <!--
+                        CODE FROM MODAL CREATE POST
+                    -->
+                    @* <button id="btnShowModal" type="button" class="btn btn-primary">Upload</button>
+
+                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style=" opacity: 1 !important;
+    visibility: visible !important;">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ModalLabel">Create Post</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Conținutul Partial View-ului se va încărca aici -->
+                                </div>
+                            </div>
+                        </div>
+                    </div> *@
+                    <!-- Card pentru crearea postării -->
+                    <div class="card mb-4 shadow-sm" style="border: none; border-radius: 15px; background: #f8f9fa;">
+                        <div class="card-body text-center">
+                            <!-- Iconiță MDI -->
+                            <div class="mb-3">
+                                <i class="mdi mdi-plus-circle-outline mdi-48px text-primary"></i> <!-- Iconiță mare -->
+                            </div>
+
+                            <!-- Titlu -->
+                            <h2 class="card-title" style="font-size: 2rem; font-weight: bold; color: #343a40;">
+                                Creează o postare nouă
+                            </h2>
+
+                            <!-- Mesaj descriptiv -->
+                            <p class="card-text" style="font-size: 1.25rem; color: #6c757d;">
+                                Share ideas, thoughts or news with our community.
+                            </p>
+
+                            <!-- Buton pentru deschiderea modalului -->
+                            <button id="btnShowModal" type="button" class="post-create-btn">
+                                <i class="mdi mdi-plus-circle"></i> Create post
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Structura modalului Bootstrap -->
+                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style=" opacity: 1 !important;
+    visibility: visible !important;">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ModalLabel">Creează o postare nouă</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Conținutul Partial View-ului se va încărca aici -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $("#btnShowModal").click(function () {
+                                $.get("@Url.Action("CreatePost", "Home")", function (data) {
+                                    $('.modal-body').html(data);
+                                    var modal = new bootstrap.Modal(document.getElementById('Modal'));
+                                    modal.show();
+                                });
+                            });
+
+                            $(document).on('submit', '#createPostForm', function (e) {
+                                e.preventDefault();
+
+                                $.ajax({
+                                    url: $(this).attr('action'),
+                                    type: 'POST',
+                                    data: $(this).serialize(),
+                                    success: function (response) {
+                                        if (response.success) {
+                                            window.location.href = '@Url.Action("Dashboard", "Home")';
+                                        } else {
+                                            $('.modal-body').html(response);
+                                        }
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+
+
+                    <nav class="filter-nav">
+                        <ul>
+                            <li>
+                                <a href="#" class="filter-btn active" data-filter="recent">
+                                    <i class="mdi mdi-clock-outline"></i> Recente
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="filter-btn" data-filter="popular">
+                                    <i class="mdi mdi-fire"></i> Populare
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="filter-btn" data-filter="top-liked">
+                                    <i class="mdi mdi-thumb-up"></i> Cele mai apreciate
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="filter-btn" data-filter="commented">
+                                    <i class="mdi mdi-comment"></i> Comentate
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- end comment box -->
+                    
+                    <div id="postsContainer">
+                        @await Html.PartialAsync("_PostsPartial", ViewData["PaginatedPosts"])
+                    </div>
+                </div>
+            </div> <!-- end card-->
+        </div> <!-- end col -->
+    </div>
+    <!-- end row-->
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".filter-btn");
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                filterButtons.forEach(btn => btn.classList.remove("active"));
+
+                this.classList.add("active");
+            });
+        });
+    });
+
+</script>
+<script>
+        $(document).ready(function () {
+            var pageIndex = 1;
+
+        function loadPosts() {
+            $.get("/Home/LoadPosts?pageIndex=" + pageIndex, function (data) {
+                $("#postsContainer").append(data);
+            });
+            }
+
+</script>
+
+@* <div class="post-user-comment-box">
+                            <div class="d-flex align-items-start">
+                                <img class="me-2 avatar-sm rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Generic placeholder image">
+                                <div class="w-100">
+                                    <h5 class="mt-0">Jeremy Tomlinson <small class="text-muted">3 hours ago</small></h5>
+                                    Nice work, makes me think of The Money Pit.
+
+                                    <br>
+                                    <a href="javascript: void(0);" class="text-muted font-13 d-inline-block mt-2"><i class="mdi mdi-reply"></i> Reply</a>
+
+                                    <div class="d-flex align-items-start mt-3">
+                                        <a class="pe-2" href="#">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="avatar-sm rounded-circle" alt="Generic placeholder image">
+                                        </a>
+                                        <div class="w-100">
+                                            <h5 class="mt-0">Kathleen Thomas <small class="text-muted">5 hours ago</small></h5>
+                                            i'm in the middle of a timelapse animation myself! (Very different though.) Awesome stuff.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-start mt-2">
+                                <a class="pe-2" href="#">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" alt="Generic placeholder image" height="31">
+                                </a>
+                                <div class="w-100">
+                                    <input type="text" id="simpleinput" class="form-control border-0 form-control-sm" placeholder="Add comment">
+                                </div>
+                            </div>
+                        </div> *@

@@ -1,0 +1,322 @@
+﻿body {
+    background-image: url('/assets/img/wall.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container {
+    background-color: rgba(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.card {
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 10%);
+    margin-bottom: 24px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid #ecf2f5;
+    border-radius: .25rem;
+}
+
+.avatar-lg {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.img-thumbnail {
+    padding: .25rem;
+    background-color: #ecf2f5;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.avatar-sm {
+    height: 2.25rem;
+    width: 2.25rem;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.me-2 {
+    margin-right: .75rem !important;
+}
+
+.avatar-md {
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.bg-transparent {
+    --bs-bg-opacity: 1;
+    background-color: transparent !important;
+}
+
+.post-user-comment-box {
+    background-color: #f2f8fb;
+    margin: 0 -.75rem;
+    padding: 1rem;
+    margin-top: 20px;
+}
+
+.simplebar-wrapper {
+    overflow: hidden;
+    width: inherit;
+    height: inherit;
+    max-width: inherit;
+    max-height: inherit;
+}
+
+.simplebar-height-auto-observer-wrapper {
+    box-sizing: inherit !important;
+    height: 100%;
+    width: 100%;
+    max-width: 1px;
+    position: relative;
+    float: left;
+    max-height: 1px;
+    overflow: hidden;
+    z-index: -1;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+    flex-grow: inherit;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+
+.font-13 {
+    font-size: 13px !important;
+}
+
+.btn-soft-info {
+    color: #45bbe0;
+    background-color: rgba(69,187,224,.18);
+    border-color: rgba(69,187,224,.12);
+}
+
+.social-list-item {
+    height: 2rem;
+    width: 2rem;
+    line-height: calc(2rem - 2px);
+    display: block;
+    border: 2px solid #adb5bd;
+    border-radius: 50%;
+    color: #adb5bd;
+}
+
+.comment-area-box .comment-area-btn {
+    background-color: #f2f8fb;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-radius: 0 0 .2rem .2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.title-category-row {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 10px;
+}
+
+.title-input {
+    height: 40px; 
+    padding: 8px 12px; 
+    box-sizing: border-box;
+}
+
+.category-select {
+    width: auto; 
+    font-size:16px;
+}
+
+.custom-btn {
+    background-color: #FFA500;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .custome-btn:hover {
+        background-color: #FF8C00;
+    }
+
+    .custom-btn:active {
+        background-color: #FF4500;
+    }
+/* Meniu de filtrare stilizat */
+.filter-nav {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .filter-nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+    }
+
+        .filter-nav ul li {
+            display: inline-block;
+        }
+
+            .filter-nav ul li a {
+                text-decoration: none;
+                padding: 8px 15px;
+                border-radius: 20px;
+                color: #333;
+                font-size: 14px;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+                .filter-nav ul li a i {
+                    font-size: 16px;
+                }
+
+                /* Buton activ (selectat) */
+                .filter-nav ul li a.active {
+                    background: orange;
+                    color: white;
+                }
+
+                /* Hover effect */
+                .filter-nav ul li a:hover {
+                    background: #ffa726;
+                    color: white;
+                }
+
+/* Efect la hover pentru story box */
+.story-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+    .story-box:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+
+.filter-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+    .filter-nav ul li {
+        display: inline;
+    }
+
+.filter-btn {
+    text-decoration: none;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+    .filter-btn.active {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+.pagination-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+}
+
+    .pagination-nav ul li {
+        display: inline;
+    }
+
+.page-link {
+    text-decoration: none;
+    color: #007bff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+}
+
+    .page-link:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+.post-container {
+    margin-top: 20px;
+}
+
+.post {
+    display: none;
+}
+
+    .post.active {
+        display: block;
+    }
+
+.post-create-btn {
+    background-color: orange;
+    color: white;
+    font-size: 1.25rem;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .post-create-btn:hover {
+        background-color: darkorange;
+        transform: scale(1.05);
+    }
+
+        .post-create-btn:active {
+            background-color: #ff8c00;
+            transform: scale(0.95);
+        }

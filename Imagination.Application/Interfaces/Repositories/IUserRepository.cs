@@ -12,7 +12,11 @@ namespace Imagination.Application.Interfaces.Repositories
     public interface IUserRepository
     {
         Task<User?> GetUserByIdAsync(int idUser);
+        Task<User?> GetUserByUsernameAndPassword(string username, string password);
+        Task<User?> GetUserByEmail(string email);
+        Task AddUserAsync(User user);
         Task UpdateAsync(User user);
+
 
     }
 }

@@ -50,7 +50,7 @@ namespace Imagination.Web.Controllers
                     userClaim.Username = string.Empty;
                     userClaim.Email = string.Empty;
                     userClaim.PhotoUrl = string.Empty;
-                    userClaim.UserRole = Domain.Enum.UserRole.None;
+                    userClaim.UserRole = UserRole.None;
                 }
 
                 return userClaim;
@@ -63,7 +63,7 @@ namespace Imagination.Web.Controllers
                     Username = string.Empty,
                     Email = string.Empty,
                     PhotoUrl = string.Empty,
-                    UserRole = Domain.Enum.UserRole.None,
+                    UserRole = UserRole.None,
                 };
 
                 return userClaim;

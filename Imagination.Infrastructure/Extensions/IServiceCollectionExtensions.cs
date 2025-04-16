@@ -15,6 +15,7 @@ using Imagination.Application.Patterns.Proxy;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Imagination.Application.Patterns.Singleton;
+using Imagination.Infrastructure.Services.UnitOfWork;
 
 namespace Imagination.Infrastructure.Extensions
 {
@@ -53,9 +54,8 @@ namespace Imagination.Infrastructure.Extensions
                 .AddScoped<IPostRepository, PostRepository>()
                 .AddScoped<ILikeRepository, LikeRepository>()
                 .AddScoped<ICommentRepository, CommentRepository>()
-                .AddScoped<IPostService, PostService>();
-
-
+                .AddScoped<IPostService, PostService>()
+                .AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }

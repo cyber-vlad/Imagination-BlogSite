@@ -38,23 +38,9 @@ namespace Imagination.Web.Controllers
         [Authorize]
         public async Task<IActionResult> Dashboard(int pageIndex) 
         {
-            var userClaim = GetUserClaims();
-            List<PostDto> posts = await _mediator.Send(new GetAllPostsForCurrentUserQuery(userClaim.Result.Id));
-            var paginatedPosts = PaginatedListDto<PostDto>.Create(posts, Math.Max(1, pageIndex), 5);
+            List<PostDto> posts = await _mediator.Send(new GetAllPostsForCurrentUserQuery(GetUserClaims().Result.Id));
 
-            ViewData["PaginatedPosts"] = paginatedPosts;
-
-            return View("~/Views/Home/Dashboard.cshtml");
-        }
-
-        [HttpGet]
-        [Authorize]
-        public async Task<IActionResult> LoadPosts(int pageIndex)
-        {
-            var userClaim = GetUserClaims();
-            List<PostDto> posts = await _mediator.Send(new GetAllPostsForCurrentUserQuery(userClaim.Id));
-             
-            return Json(PaginatedListDto<PostDto>.Create(posts, Math.Max(1, pageIndex), 5));
+            return View("~/Views/Home/Dashboard.cshtml", PaginatedListDto<PostDto>.Create(posts, Math.Max(1, pageIndex), 5));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

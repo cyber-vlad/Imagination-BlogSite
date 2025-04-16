@@ -2,6 +2,7 @@
 using Imagination.Application.DTOs;
 using Imagination.Application.Features.Dashboard.Commands.CreatePost;
 using Imagination.Application.Features.Dashboard.Commands.ToggleLike;
+using Imagination.Application.Features.Post.Commands.CreateComment;
 using Imagination.Application.Features.Post.Queries.GetPostById;
 using Imagination.Application.Patterns.Mediator;
 using Imagination.Application.Patterns.Mediator.Interfaces;
@@ -73,7 +74,7 @@ namespace Imagination.Web.Controllers
                 return Json(new { success = false });
             }
 
-            return Json(new { success = true, likeCount = response.Post.NrLikes, isLiked = response.IsLiked });
+            return Json(new { success = true, likeCount = response.NrLikes, isLiked = response.IsLiked });
         }
 
         [HttpPost]
@@ -83,6 +84,9 @@ namespace Imagination.Web.Controllers
             {
                 return PartialView("~/Views/Home/_CreateCommentPartial.cshtml", model);
             }
+
+            model.UserId = GetUserClaims().Result.Id;
+            var result = await _mediator.Send(new CreateCommentCommand(model));
             return Json(new { success = true });
         }
     }

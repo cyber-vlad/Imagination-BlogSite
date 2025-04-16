@@ -1,5 +1,6 @@
 ﻿using Imagination.Application.DTOs;
 using Imagination.Application.Responses;
+using Imagination.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace Imagination.Application.Interfaces.Repositories
 {
     public interface ILikeRepository
     {
-        Task<ToggledLikeResponse> AddLikeAsync(ToggleLikeDto model);
+        Task<Like?> GetLikeByPostUserId(int postId, int userId);
+        Task AddLikeAsync(Like like);
+        Task RemoveLikeAsync(Like like);
     }
 }

@@ -15,21 +15,24 @@ using Imagination.Domain.Enum;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Imagination.Shared;
+using Imagination.Application.Interfaces.Repositories;
 namespace Imagination.Infrastructure.Services
 {
     public class AccountService : IAccountService
     {
-        private readonly AppDbContext _context;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IUserRepository _userRepository;
 
-        public AccountService(AppDbContext context, IHttpContextAccessor httpContextAccessor)
+        public AccountService(IHttpContextAccessor httpContextAccessor, IUserRepository userRepository)
         {
-            _context = context;
             _httpContextAccessor = httpContextAccessor;
+            _userRepository = userRepository;
         }
+
         public async Task<BaseResponse> LoginAsync(LoginDto model)
         {
-            var user = await _context.Users.Where(u => (u.Email == model.Username || u.Username == model.Username) && u.Password == CryptoData.HashGen(model.Password)).FirstOrDefaultAsync();
+
+            var user = await _userRepository.GetUserByUsernameAndPassword(model.Username, CryptoData.HashGen(model.Password));
 
             if (user == null || (!user.Username.Equals(model.Username, StringComparison.Ordinal) && !user.Email.Equals(model.Username, StringComparison.Ordinal)))
             {
@@ -63,7 +66,7 @@ namespace Imagination.Infrastructure.Services
         }
         public async Task<BaseResponse> RegisterAsync(RegisterDto model)
         {
-            if (await _context.Users.AnyAsync(u => u.Email == model.Email))
+            if(await _userRepository.GetUserByEmail(model.Email) is not null)
             {
                 return new BaseResponse { ErrorCode = ErrorCode.Email_already_used, ErrorMessage = "Email address already used!" };
             }
@@ -77,8 +80,8 @@ namespace Imagination.Infrastructure.Services
                 PhotoUrl = String.Empty,
             };
             
-            await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
+            await _userRepository.AddUserAsync(user);
+
             return new BaseResponse { ErrorCode = 0 };
         }
         public async Task<BaseResponse> LogoutAsync()
@@ -94,11 +97,11 @@ namespace Imagination.Infrastructure.Services
         }
         public async Task<BaseResponse> CheckUSerByEmailAsync(string email)
         {
-            var result = await _context.Users.AnyAsync(u => u.Email == email);
-            if(!result)
+            if(await _userRepository.GetUserByEmail(email) is null)
             {
                 return new BaseResponse { ErrorCode = ErrorCode.User_not_found, ErrorMessage = "Email address is not registered" };
             }
+
             return new BaseResponse { ErrorCode = ErrorCode.NoError};
         }
 

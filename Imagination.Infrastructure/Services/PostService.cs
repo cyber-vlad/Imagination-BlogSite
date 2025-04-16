@@ -18,13 +18,15 @@ namespace Imagination.Infrastructure.Services
         private readonly IUserRepository _userRepository;
         private readonly ILikeRepository _likeRepositor;
         private readonly ICommentRepository _commentRepositor;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public PostService(IPostRepository postRepository, IUserRepository userRepository, ILikeRepository likeRepositor, ICommentRepository commentRepository)
+        public PostService(IPostRepository postRepository, IUserRepository userRepository, ILikeRepository likeRepositor, ICommentRepository commentRepository, IUnitOfWork unitOfWork)
         {
             _postRepository = postRepository;
             _userRepository = userRepository;
             _likeRepositor = likeRepositor;
             _commentRepositor = commentRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<BaseResponse> CreatePostAsync(CreatePostDto model)
@@ -102,12 +104,32 @@ namespace Imagination.Infrastructure.Services
 
         public async Task<ToggledLikeResponse> ToggleLikeAsync(ToggleLikeDto model)
         {
-            var response = await _likeRepositor.AddLikeAsync(model);
-            if(response.ErrorCode == Domain.Enum.ErrorCode.Internal_error)
+            try
             {
-                return new ToggledLikeResponse { ErrorCode = Domain.Enum.ErrorCode.Internal_error, ErrorMessage = "Like attribution failed"};
+                var resultLike = await _likeRepositor.GetLikeByPostUserId(model.PostId, model.UserId);
+                var resultPost = await _postRepository.GetPostByIdAsync(model.PostId);
+
+                if(resultLike is null)
+                {
+                    await _likeRepositor.AddLikeAsync(new Like { UserId = model.UserId, PostId = model.PostId });
+                    resultPost.NrLikes++;
+
+                    await _unitOfWork.SaveChangesAsync();
+                    return new ToggledLikeResponse { ErrorCode = Domain.Enum.ErrorCode.NoError, NrLikes = resultPost.NrLikes, IsLiked = true };
+                }
+                else
+                {
+                    await _likeRepositor.RemoveLikeAsync(resultLike);
+                    resultPost.NrLikes--;
+
+                    await _unitOfWork.SaveChangesAsync();
+                    return new ToggledLikeResponse { ErrorCode = Domain.Enum.ErrorCode.NoError, NrLikes = resultPost.NrLikes, IsLiked = false };
+                }
             }
-            return new ToggledLikeResponse { ErrorCode = Domain.Enum.ErrorCode.NoError, Post = response.Post, IsLiked = response.IsLiked };
+            catch (Exception ex)
+            {
+                return new ToggledLikeResponse { ErrorCode = Domain.Enum.ErrorCode.Internal_error, ErrorMessage = "Like attribution failed" };
+            }
         }
 
         public async Task<CreatedCommentResponse> CreateCommentAsync(CreateCommentDto model)

@@ -11,7 +11,8 @@ namespace Imagination.Application.Interfaces.Repositories
 {
     public interface IPostRepository
     {
-        Task<BaseResponse> CreatePostAsync(Post post);
+        Task<BaseResponse> AddPostAsync(Post post);
         Task<List<Post>> GetAllPostsAsync();
+        Task<Post?> GetPostByIdAsync(int postId);
     }
 }

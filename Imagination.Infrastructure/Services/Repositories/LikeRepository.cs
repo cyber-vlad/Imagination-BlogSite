@@ -16,11 +16,12 @@ namespace Imagination.Infrastructure.Services.Repositories
     public class LikeRepository : ILikeRepository
     {
         private readonly AppDbContext _context;
+
         public LikeRepository(AppDbContext context)
         {
             _context = context;
         }
-        public async Task<ToggledLikeResponse> ToggleLikeAsync(ToggleLikeDto model)
+        public async Task<ToggledLikeResponse> AddLikeAsync(ToggleLikeDto model)
         {
             try
             {

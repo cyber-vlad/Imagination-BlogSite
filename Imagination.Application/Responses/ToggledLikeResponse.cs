@@ -9,7 +9,7 @@ namespace Imagination.Application.Responses
 {
     public class ToggledLikeResponse : BaseResponse
     {
-        public Post Post{ get; set; }
+        public Post Post { get; set; }
         public bool IsLiked { get; set; }
     }
 }

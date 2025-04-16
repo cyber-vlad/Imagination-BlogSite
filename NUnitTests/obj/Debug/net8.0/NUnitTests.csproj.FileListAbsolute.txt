@@ -504,3 +504,4 @@ C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme d
 C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\NUnitTests\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\NUnitTests\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\NUnitTests\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\NUnitTests\obj\Debug\net8.0\NUnitTests.sourcelink.json

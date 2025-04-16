@@ -19,3 +19,4 @@ C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme d
 C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Persistence\obj\Debug\net8.0\Imagination.Persistence.pdb
 C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Persistence\obj\Debug\net8.0\Imagination.Persistence.genruntimeconfig.cache
 C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Persistence\obj\Debug\net8.0\ref\Imagination.Persistence.dll
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Persistence\obj\Debug\net8.0\Imagination.Persistence.sourcelink.json

@@ -29,6 +29,7 @@ namespace Imagination.Web.Controllers
         public async Task<IActionResult> EditProfileImage(PhotoUserDto model)
         {
             var response = await _mediator.Send(new EditProfileImageCommand(model));
+
             switch (response.ErrorCode)
             {
                 case ErrorCode.Upload_image_failed:
@@ -36,6 +37,7 @@ namespace Imagination.Web.Controllers
                 case ErrorCode.NoError:
                     TempData["SuccessMessage"] = response.ErrorMessage; break;
             }
+
             return View("~/Views/Profile/Index.cshtml");
         }
     }

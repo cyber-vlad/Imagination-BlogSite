@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Imagination.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250407114945_Initial_Create")]
+    [Migration("20250410085856_Initial_Create")]
     partial class Initial_Create
     {
         /// <inheritdoc />
@@ -104,6 +104,9 @@ namespace Imagination.Persistence.Migrations
 
                     b.Property<DateTime>("DateOfCreation")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("NrComments")
+                        .HasColumnType("int");
 
                     b.Property<int>("NrLikes")
                         .HasColumnType("int");

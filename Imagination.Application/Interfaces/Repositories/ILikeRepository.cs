@@ -10,6 +10,6 @@ namespace Imagination.Application.Interfaces.Repositories
 {
     public interface ILikeRepository
     {
-        Task<ToggledLikeResponse> ToggleLikeAsync(ToggleLikeDto model);
+        Task<ToggledLikeResponse> AddLikeAsync(ToggleLikeDto model);
     }
 }

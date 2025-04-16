@@ -9,3 +9,4 @@ C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme d
 C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Shared\obj\Debug\net8.0\refint\Imagination.Shared.dll
 C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Shared\obj\Debug\net8.0\Imagination.Shared.pdb
 C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Shared\obj\Debug\net8.0\ref\Imagination.Shared.dll
+C:\Users\KramerOxxx\Desktop\UTM\3 year II semester\TMPP - Tehnici si mecanisme de proiectare a produselor program\Project\Imagination\Imagination.Shared\obj\Debug\net8.0\Imagination.Shared.sourcelink.json

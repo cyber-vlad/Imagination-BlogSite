@@ -15,7 +15,9 @@ namespace Imagination.Application.DTOs
         public CategoryPost Category{ get; set; }
         public DateTime DateOfCreation { get; set; }
         public int NrLikes { get; set; } 
+        public int NrComments { get; set; }
         public AuthorPostDto Author { get; set; }
+        public CommentDto? Comments { get; set; }
         public bool IsLikedByCurrentUser { get; set; }
     }
 }

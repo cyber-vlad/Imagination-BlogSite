@@ -6,11 +6,9 @@
 }
 
 <!-- Formularul -->
-<form id="createPostForm" asp-controller="Home" asp-action="CreatePost" class="comment-area-box mb-3" method="POST" autocomplete="off">
+<form id="createPostForm" asp-controller="Post" asp-action="CreatePost" class="comment-area-box mb-3" method="POST" autocomplete="off">
     @Html.AntiForgeryToken()
     <input type="hidden" name="AuthorId" value="@currentUserService.UserId">
-
-
 
     <div class="title-category-row">
         <!-- Câmpul Title -->

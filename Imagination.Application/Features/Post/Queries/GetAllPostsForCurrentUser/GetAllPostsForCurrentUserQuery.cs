@@ -13,11 +13,11 @@ namespace Imagination.Application.Features.Dashboard.Queries.GetAllPosts
 {
     public sealed record GetAllPostsForCurrentUserQuery(int currentUserId) : IQuery<List<PostDto>>;
 
-    public class GetAllPostsQueryHandler : IQueryHandler<GetAllPostsForCurrentUserQuery, List<PostDto>>
+    public class GetAllPostsForCurrentUserQueryHandler : IQueryHandler<GetAllPostsForCurrentUserQuery, List<PostDto>>
     {
         private readonly IPostService _postService;
 
-        public GetAllPostsQueryHandler(IPostService postService)
+        public GetAllPostsForCurrentUserQueryHandler(IPostService postService)
         {
             _postService = postService;
         }

@@ -22,6 +22,7 @@ namespace Imagination.Persistence.Migrations
                     Category = table.Column<int>(type: "int", nullable: false),
                     DateOfCreation = table.Column<DateTime>(type: "datetime2", nullable: false),
                     NrLikes = table.Column<int>(type: "int", nullable: false),
+                    NrComments = table.Column<int>(type: "int", nullable: false),
                     AuthorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

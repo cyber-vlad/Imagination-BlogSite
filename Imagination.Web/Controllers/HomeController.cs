@@ -18,6 +18,7 @@ namespace Imagination.Web.Controllers
     public class HomeController : BaseController
     {
         private readonly IMediator _mediator;
+
         public HomeController(IMediator mediator)
         {
             _mediator = mediator;
@@ -54,44 +55,6 @@ namespace Imagination.Web.Controllers
             List<PostDto> posts = await _mediator.Send(new GetAllPostsForCurrentUserQuery(userClaim.Id));
              
             return Json(PaginatedListDto<PostDto>.Create(posts, Math.Max(1, pageIndex), 5));
-        }
-
-        [HttpGet]
-        [Authorize]
-        public async Task<IActionResult> CreatePost()
-        {
-            return PartialView("~/Views/Home/Modals/CreatePostModal.cshtml");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> CreatePost(CreatePostDto model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return PartialView("~/Views/Home/Modals/CreatePostModal.cshtml", model);
-            }
-            var response = await _mediator.Send(new CreatePostCommand(model));
-            switch (response.ErrorCode)
-            {
-                case ErrorCode.NoError:
-                    return Json(new { success = true });
-                case ErrorCode.Create_post_failed:
-                    TempData["ErrorMessage"] = response.ErrorMessage; break;
-            }
-            return PartialView("~/Views/Home/Modals/CreatePostModal.cshtml", model);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> ToggleLike(int postId, int userId)
-        {
-            var model = new ToggleLikeDto { PostId = postId, UserId = userId };
-            var response = await _mediator.Send(new ToggleLikeCommand(model));
-
-            if (response.ErrorCode == ErrorCode.Internal_error) 
-            {
-                return Json(new { success = false });
-            }
-            return Json(new { success = true, likeCount = response.Post.NrLikes, isLiked = response.IsLiked});
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

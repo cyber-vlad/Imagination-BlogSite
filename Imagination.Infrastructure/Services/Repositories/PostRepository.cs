@@ -17,11 +17,13 @@ namespace Imagination.Infrastructure.Services.Repositories
     public class PostRepository : IPostRepository
     {
         private readonly AppDbContext _context;
+        
         public PostRepository(AppDbContext context)
         {
             _context = context;
         }
-        public async Task<BaseResponse> CreatePostAsync(Post post)
+
+        public async Task<BaseResponse> AddPostAsync(Post post)
         {
             try
             {
@@ -33,13 +35,21 @@ namespace Imagination.Infrastructure.Services.Repositories
             {
                 return new BaseResponse { ErrorCode = ErrorCode.Create_post_failed };
             }
-
         }
+
         public async Task<List<Post>> GetAllPostsAsync()
         {
             return await _context.Posts
                         .Include(p => p.Likes)    
                         .ToListAsync();
+        }
+
+        public async Task<Post?> GetPostByIdAsync(int postId)
+        {
+            return await _context.Posts
+                .Include(p => p.Comments)
+                .Include(p => p.Likes)
+                .FirstOrDefaultAsync(p => p.Id == postId);
         }
     }
 }

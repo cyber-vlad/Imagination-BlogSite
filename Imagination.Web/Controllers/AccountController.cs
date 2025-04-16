@@ -90,7 +90,9 @@ namespace Imagination.Web.Controllers
         public async Task<IActionResult> Logout()
         {
             _logger.LogInformation("User logging out");
+
             await _mediator.Send(new LogoutCommand());
+
             return RedirectToAction("Login", "Account");
         }
 
@@ -108,7 +110,9 @@ namespace Imagination.Web.Controllers
                 _logger.LogWarning("Forgot password request failed due to invalid model state");
                 return View(model);
             }
+
             var result = await _mediator.Send(new CheckUserExistsByEmailQuery(model));
+
             if (result.ErrorCode == ErrorCode.User_not_found)
             {
                 _logger.LogWarning($"Password reset failed: Email {model.Email} not found.");
@@ -121,7 +125,5 @@ namespace Imagination.Web.Controllers
 
             return View("~/Views/Account/ForgotPassword.cshtml");
         }
-
-
     }
 }

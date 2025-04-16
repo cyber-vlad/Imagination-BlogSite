@@ -11,7 +11,7 @@ namespace Imagination.Application.Interfaces.Repositories
 {
     public interface IUserRepository
     {
-        Task<User> GetUserByIdAsync(int Id);
+        Task<User?> GetUserByIdAsync(int idUser);
         Task UpdateAsync(User user);
 
     }

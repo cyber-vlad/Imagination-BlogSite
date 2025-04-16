@@ -22,11 +22,9 @@ namespace Imagination.Infrastructure.Services.Repositories
             _context = context;
         }
 
-        public async Task<User> GetUserByIdAsync(int Id)
+        public async Task<User?> GetUserByIdAsync(int idUser)
         {
-            var result = await _context.Users.FirstOrDefaultAsync(e => e.Id == Id);
-            if (result == null) return null;
-            return result;
+            return await _context.Users.FirstOrDefaultAsync(e => e.Id == idUser);
         }
 
         public async Task UpdateAsync(User user)

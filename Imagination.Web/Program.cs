@@ -75,7 +75,10 @@ namespace Imagination.Web
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-
+            app.MapControllerRoute(
+                name: "postDetails",
+                pattern: "Post/{id}",
+                defaults: new { controller = "Post", action = "Details" });
  
             app.Run();
         }

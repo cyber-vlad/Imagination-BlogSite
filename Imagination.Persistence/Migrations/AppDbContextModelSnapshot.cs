@@ -102,6 +102,9 @@ namespace Imagination.Persistence.Migrations
                     b.Property<DateTime>("DateOfCreation")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("NrComments")
+                        .HasColumnType("int");
+
                     b.Property<int>("NrLikes")
                         .HasColumnType("int");
 

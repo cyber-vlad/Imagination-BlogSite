@@ -50,7 +50,7 @@
                 <input type="hidden" name="PostId" value="@post.PostId">
                 <input type="hidden" name="UserId" value="@currentUserService.UserId">
                 <h5 class="">@post.Author.Username <small class="text-muted">@post.DateOfCreation.ToString("M/d/yyy")</small></h5>
-                <a href="#"><p>@post.Title</p></a>
+                <a asp-controller="Post" asp-action="Details" asp-route-postId="@post.PostId"><p>@post.Title</p></a>
                 @{
                     string content = @post.Content;
                     int n = 140;
@@ -68,18 +68,44 @@
                 <br>
             </div>
         </div>
-
         <div class="mt-2">
-           <button class="btn btn-sm btn-link @(post.IsLikedByCurrentUser ? "text-danger" : "text-muted") like-btn"
+            <button class="btn btn-sm btn-link @(post.IsLikedByCurrentUser ? "text-danger" : "text-muted") like-btn"
                 data-post-id="@post.PostId"
                 data-user-id="@currentUserService.UserId"
                 data-is-liked="@post.IsLikedByCurrentUser.ToString().ToLower()">
             <i class="mdi mdi-heart"></i> Like (<span id="like-count-@post.PostId">@post.NrLikes</span>)
             </button>
-            <div class="btn btn-sm btn-link text-muted"><i class="mdi mdi-comment-multiple-outline"></i> Comments (0)</div>
+            <div class="btn btn-sm btn-link text-muted"><i class="mdi mdi-comment"></i> Comments (@post.NrComments)</div>
         </div>
+
+        @await Html.PartialAsync("_CreateCommentPartial", new Imagination.Application.DTOs.CreateCommentDto { PostId = post.PostId})
+
     </div>
 }
+
+@* <div class="post-user-comment-box">
+    <div class="d-flex align-items-start">
+        <img class="me-2 avatar-sm rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Generic placeholder image">
+        <div class="w-100">
+            <h5 class="mt-0">Jeremy Tomlinson <small class="text-muted">3 hours ago</small></h5>
+            Nice work, makes me think of The Money Pit.
+
+            <br>
+            <a href="javascript: void(0);" class="text-muted font-13 d-inline-block mt-2"><i class="mdi mdi-reply"></i> Reply</a>
+
+            <div class="d-flex align-items-start mt-3">
+                <a class="pe-2" href="#">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="avatar-sm rounded-circle" alt="Generic placeholder image">
+                </a>
+                <div class="w-100">
+                    <h5 class="mt-0">Kathleen Thomas <small class="text-muted">5 hours ago</small></h5>
+                    i'm in the middle of a timelapse animation myself! (Very different though.) Awesome stuff.
+                </div>
+            </div>
+        </div>
+    </div>
+</div> *@
+
 
 <script>
     $(document).ready(function () {
@@ -90,7 +116,7 @@
             var likeCountSpan = $("#like-count-" + postId);
 
             $.ajax({
-                url: "@Url.Action("ToggleLike", "Home")",
+                url: "@Url.Action("ToggleLike", "Post")",
                 type: "POST",
                 data: { postId: postId, userId: userId },
                 success: function (response) {

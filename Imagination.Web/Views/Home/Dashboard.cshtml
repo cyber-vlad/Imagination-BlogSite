@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Dashboard";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -58,25 +57,7 @@
         <div class="col-xl-7">
             <div class="card">
                 <div class="card-body">
-                    <!--
-                        CODE FROM MODAL CREATE POST
-                    -->
-                    @* <button id="btnShowModal" type="button" class="btn btn-primary">Upload</button>
-
-                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style=" opacity: 1 !important;
-    visibility: visible !important;">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="ModalLabel">Create Post</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <!-- Conținutul Partial View-ului se va încărca aici -->
-                                </div>
-                            </div>
-                        </div>
-                    </div> *@
+                   
                     <!-- Card pentru crearea postării -->
                     <div class="card mb-4 shadow-sm" style="border: none; border-radius: 15px; background: #f8f9fa;">
                         <div class="card-body text-center">
@@ -87,7 +68,7 @@
 
                             <!-- Titlu -->
                             <h2 class="card-title" style="font-size: 2rem; font-weight: bold; color: #343a40;">
-                                Creează o postare nouă
+                                Create a new post
                             </h2>
 
                             <!-- Mesaj descriptiv -->
@@ -97,7 +78,7 @@
 
                             <!-- Buton pentru deschiderea modalului -->
                             <button id="btnShowModal" type="button" class="post-create-btn">
-                                <i class="mdi mdi-plus-circle"></i> Create post
+                                <i class="mdi mdi-plus-circle"></i> Create
                             </button>
                         </div>
                     </div>
@@ -127,7 +108,7 @@
                     <script type="text/javascript">
                         $(document).ready(function () {
                             $("#btnShowModal").click(function () {
-                                $.get("@Url.Action("CreatePost", "Home")", function (data) {
+                                $.get("@Url.Action("CreatePost", "Post")", function (data) {
                                     $('.modal-body').html(data);
                                     var modal = new bootstrap.Modal(document.getElementById('Modal'));
                                     modal.show();
@@ -158,22 +139,22 @@
                         <ul>
                             <li>
                                 <a href="#" class="filter-btn active" data-filter="recent">
-                                    <i class="mdi mdi-clock-outline"></i> Recente
+                                    <i class="mdi mdi-clock-outline"></i> Recent
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="filter-btn" data-filter="popular">
-                                    <i class="mdi mdi-fire"></i> Populare
+                                    <i class="mdi mdi-fire"></i> Popular
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="filter-btn" data-filter="top-liked">
-                                    <i class="mdi mdi-thumb-up"></i> Cele mai apreciate
+                                    <i class="mdi mdi-thumb-up"></i> Most appreciated
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="filter-btn" data-filter="commented">
-                                    <i class="mdi mdi-comment"></i> Comentate
+                                    <i class="mdi mdi-comment"></i> Most commented
                                 </a>
                             </li>
                         </ul>
@@ -198,7 +179,6 @@
                 event.preventDefault();
 
                 filterButtons.forEach(btn => btn.classList.remove("active"));
-
                 this.classList.add("active");
             });
         });
@@ -206,45 +186,14 @@
 
 </script>
 <script>
-        $(document).ready(function () {
-            var pageIndex = 1;
+    $(document).ready(function () {
+        var pageIndex = 1;
 
-        function loadPosts() {
-            $.get("/Home/LoadPosts?pageIndex=" + pageIndex, function (data) {
-                $("#postsContainer").append(data);
-            });
-            }
+    function loadPosts() {
+        $.get("/Home/LoadPosts?pageIndex=" + pageIndex, function (data) {
+            $("#postsContainer").append(data);
+        });
+        }
 
 </script>
 
-@* <div class="post-user-comment-box">
-                            <div class="d-flex align-items-start">
-                                <img class="me-2 avatar-sm rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Generic placeholder image">
-                                <div class="w-100">
-                                    <h5 class="mt-0">Jeremy Tomlinson <small class="text-muted">3 hours ago</small></h5>
-                                    Nice work, makes me think of The Money Pit.
-
-                                    <br>
-                                    <a href="javascript: void(0);" class="text-muted font-13 d-inline-block mt-2"><i class="mdi mdi-reply"></i> Reply</a>
-
-                                    <div class="d-flex align-items-start mt-3">
-                                        <a class="pe-2" href="#">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="avatar-sm rounded-circle" alt="Generic placeholder image">
-                                        </a>
-                                        <div class="w-100">
-                                            <h5 class="mt-0">Kathleen Thomas <small class="text-muted">5 hours ago</small></h5>
-                                            i'm in the middle of a timelapse animation myself! (Very different though.) Awesome stuff.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-start mt-2">
-                                <a class="pe-2" href="#">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" alt="Generic placeholder image" height="31">
-                                </a>
-                                <div class="w-100">
-                                    <input type="text" id="simpleinput" class="form-control border-0 form-control-sm" placeholder="Add comment">
-                                </div>
-                            </div>
-                        </div> *@

@@ -52,6 +52,7 @@ namespace Imagination.Infrastructure.Extensions
                 .AddScoped<IUserRepository, UserRepository>()
                 .AddScoped<IPostRepository, PostRepository>()
                 .AddScoped<ILikeRepository, LikeRepository>()
+                .AddScoped<ICommentRepository, CommentRepository>()
                 .AddScoped<IPostService, PostService>();
 
 

@@ -535,6 +535,8 @@ h6 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
+
+
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -542,8 +544,12 @@ h6 {
   font-size: 14px;
   padding-bottom: 20px;
   position: relative;
-}
 
+
+}
+footer.footer {
+    margin-top: 80px;
+}
 .footer .footer-top {
   padding-top: 20px;
 }

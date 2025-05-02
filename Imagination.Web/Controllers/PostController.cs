@@ -25,12 +25,14 @@ namespace Imagination.Web.Controllers
         [Authorize]
         public async Task<IActionResult> Details(int postId)
         {
-            PostDto responsePost = await _mediator.Send(new GetPostDetailsByIdQuery(postId));
+            var responsePost = await _mediator.Send(new GetPostDetailsByIdQuery(postId, GetUserClaims().Result.Id));
+
             if (responsePost is null)
             {
                 TempData["ErrorMessage"] = "Something is wrong with this post";
                 return RedirectToAction("Index", "Home");
             }
+
             return View("~/Views/Post/Details.cshtml", responsePost);
         }
 
@@ -44,6 +46,8 @@ namespace Imagination.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> CreatePost(CreatePostDto model)
         {
+            model.AuthorId = GetUserClaims().Result.Id;
+
             if (!ModelState.IsValid)
             {
                 return PartialView("~/Views/Home/Modals/CreatePostModal.cshtml", model);
@@ -64,9 +68,9 @@ namespace Imagination.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ToggleLike(int postId, int userId)
+        public async Task<IActionResult> ToggleLike(int postId)
         {
-            var model = new ToggleLikeDto { PostId = postId, UserId = userId };
+            var model = new ToggleLikeDto { PostId = postId, UserId = GetUserClaims().Result.Id };
             var response = await _mediator.Send(new ToggleLikeCommand(model));
 
             if (response.ErrorCode == ErrorCode.Internal_error)
@@ -86,8 +90,16 @@ namespace Imagination.Web.Controllers
             }
 
             model.UserId = GetUserClaims().Result.Id;
-            var result = await _mediator.Send(new CreateCommentCommand(model));
-            return Json(new { success = true });
+            var response = await _mediator.Send(new CreateCommentCommand(model));
+            
+            if(response.ErrorCode == ErrorCode.NoError)
+            {
+                return Json(new { success = true, commentCount = response.NrComments });
+            }
+            else
+            {
+                return Json(new { success = false});
+            }
         }
     }
 }

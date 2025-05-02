@@ -8,7 +8,6 @@
 <!-- Formularul -->
 <form id="createPostForm" asp-controller="Post" asp-action="CreatePost" class="comment-area-box mb-3" method="POST" autocomplete="off">
     @Html.AntiForgeryToken()
-    <input type="hidden" name="AuthorId" value="@currentUserService.UserId">
 
     <div class="title-category-row">
         <!-- Câmpul Title -->
@@ -22,14 +21,13 @@
             <option value="2">Lifestyle</option>
             <option value="3">Technology</option>
             <option value="4">Business</option>
-            <option value="5">News</option>
         </select>
         <span asp-validation-for="Category" class="text-danger"></span>
     </div>
 
     <!-- Câmpul Content -->
     <span class="input-icon">
-        <textarea rows="3" class="form-control" asp-for="Content" placeholder="Write something..."></textarea>
+        <textarea class="form-control" id="myTextarea" asp-for="Content" placeholder="Write something..."></textarea>
         <span asp-validation-for="Content" class="text-danger"></span>
     </span>
 
@@ -38,3 +36,10 @@
         <button type="submit" class="custom-btn">Post</button>
     </div>
 </form>
+
+
+<script>
+    if (typeof tinymce !== 'undefined') {
+        initTinyEditor();
+    }
+</script>

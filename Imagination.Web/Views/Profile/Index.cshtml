@@ -20,7 +20,6 @@
                         </a>
                         <form asp-controller="Profile" asp-action="EditProfileImage" method="post" enctype="multipart/form-data" id="UploadForm">
                             <input type="file" id="uploadImage" name="profileImage" style="display: none;" accept="image/*">
-                            <input type="hidden" name="IdUser" value="@currentUserService.UserId">
                         </form>
                         <h1>@currentUserService.Username</h1>
                         <p>@currentUserService.Email</p>

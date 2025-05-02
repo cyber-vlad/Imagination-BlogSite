@@ -3,12 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DFAFFFC6-2869-4DCC-8264-B038C9507952}|Imagination.Application\\Imagination.Application.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.application\\interfaces\\repositories\\ilikerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFAFFFC6-2869-4DCC-8264-B038C9507952}|Imagination.Application\\Imagination.Application.csproj|solutionrelative:imagination.application\\interfaces\\repositories\\ilikerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\views\\post\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\views\\post\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC7316CA-37D3-4B7D-9E62-2E73EDCB44B3}|Imagination.Infrastructure\\Imagination.Infrastructure.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.infrastructure\\services\\repositories\\likerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC7316CA-37D3-4B7D-9E62-2E73EDCB44B3}|Imagination.Infrastructure\\Imagination.Infrastructure.csproj|solutionrelative:imagination.infrastructure\\services\\repositories\\likerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\views\\home\\_postspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\views\\home\\_postspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\wwwroot\\assets\\css\\posts-details.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\wwwroot\\assets\\css\\posts-details.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFAFFFC6-2869-4DCC-8264-B038C9507952}|Imagination.Application\\Imagination.Application.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.application\\features\\account\\queries\\checkuserexistsbyemail\\checkuserexistsbyemailquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFAFFFC6-2869-4DCC-8264-B038C9507952}|Imagination.Application\\Imagination.Application.csproj|solutionrelative:imagination.application\\features\\account\\queries\\checkuserexistsbyemail\\checkuserexistsbyemailquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\views\\home\\_createcommentpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\views\\home\\_createcommentpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.web\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74E2CF4B-D95D-4E43-B66C-6E4DFF7F1669}|Imagination.Web\\Imagination.Web.csproj|solutionrelative:imagination.web\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFAFFFC6-2869-4DCC-8264-B038C9507952}|Imagination.Application\\Imagination.Application.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.application\\dtos\\photouserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFAFFFC6-2869-4DCC-8264-B038C9507952}|Imagination.Application\\Imagination.Application.csproj|solutionrelative:imagination.application\\dtos\\photouserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACE241EE-1213-4074-BA72-1C9DBF4DC855}|Imagination.Domain\\Imagination.Domain.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACE241EE-1213-4074-BA72-1C9DBF4DC855}|Imagination.Domain\\Imagination.Domain.csproj|solutionrelative:imagination.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FC7316CA-37D3-4B7D-9E62-2E73EDCB44B3}|Imagination.Infrastructure\\Imagination.Infrastructure.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.infrastructure\\services\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,16 +83,12 @@
       "RelativeMoniker": "D:0:0:{FC7316CA-37D3-4B7D-9E62-2E73EDCB44B3}|Imagination.Infrastructure\\Imagination.Infrastructure.csproj|solutionrelative:imagination.infrastructure\\services\\repositories\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DFAFFFC6-2869-4DCC-8264-B038C9507952}|Imagination.Application\\Imagination.Application.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.application\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFAFFFC6-2869-4DCC-8264-B038C9507952}|Imagination.Application\\Imagination.Application.csproj|solutionrelative:imagination.application\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ACE241EE-1213-4074-BA72-1C9DBF4DC855}|Imagination.Domain\\Imagination.Domain.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.domain\\entities\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACE241EE-1213-4074-BA72-1C9DBF4DC855}|Imagination.Domain\\Imagination.Domain.csproj|solutionrelative:imagination.domain\\entities\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC7316CA-37D3-4B7D-9E62-2E73EDCB44B3}|Imagination.Infrastructure\\Imagination.Infrastructure.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.infrastructure\\extensions\\iservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC7316CA-37D3-4B7D-9E62-2E73EDCB44B3}|Imagination.Infrastructure\\Imagination.Infrastructure.csproj|solutionrelative:imagination.infrastructure\\extensions\\iservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC7316CA-37D3-4B7D-9E62-2E73EDCB44B3}|Imagination.Infrastructure\\Imagination.Infrastructure.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.infrastructure\\services\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC7316CA-37D3-4B7D-9E62-2E73EDCB44B3}|Imagination.Infrastructure\\Imagination.Infrastructure.csproj|solutionrelative:imagination.infrastructure\\services\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DFAFFFC6-2869-4DCC-8264-B038C9507952}|Imagination.Application\\Imagination.Application.csproj|c:\\users\\krameroxxx\\desktop\\utm\\3 year ii semester\\tmpp - tehnici si mecanisme de proiectare a produselor program\\project\\imagination\\imagination.application\\dtos\\postdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFAFFFC6-2869-4DCC-8264-B038C9507952}|Imagination.Application\\Imagination.Application.csproj|solutionrelative:imagination.application\\dtos\\postdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,98 +98,283 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IServiceCollectionExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Extensions\\IServiceCollectionExtensions.cs",
-              "RelativeDocumentMoniker": "Imagination.Infrastructure\\Extensions\\IServiceCollectionExtensions.cs",
-              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Extensions\\IServiceCollectionExtensions.cs",
-              "RelativeToolTip": "Imagination.Infrastructure\\Extensions\\IServiceCollectionExtensions.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAcwDoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T12:02:07.377Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Application\\Interfaces\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "Imagination.Application\\Interfaces\\IUnitOfWork.cs",
-              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Application\\Interfaces\\IUnitOfWork.cs",
-              "RelativeToolTip": "Imagination.Application\\Interfaces\\IUnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T11:57:38.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PostRepository.cs",
-              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\Repositories\\PostRepository.cs",
-              "RelativeDocumentMoniker": "Imagination.Infrastructure\\Services\\Repositories\\PostRepository.cs",
-              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\Repositories\\PostRepository.cs",
-              "RelativeToolTip": "Imagination.Infrastructure\\Services\\Repositories\\PostRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T11:12:52.815Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PostService.cs",
-              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\PostService.cs",
-              "RelativeDocumentMoniker": "Imagination.Infrastructure\\Services\\PostService.cs",
-              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\PostService.cs",
-              "RelativeToolTip": "Imagination.Infrastructure\\Services\\PostService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAGgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T11:12:35.916Z",
+              "Title": "posts-details.css",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\assets\\css\\posts-details.css",
+              "RelativeDocumentMoniker": "Imagination.Web\\wwwroot\\assets\\css\\posts-details.css",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\assets\\css\\posts-details.css",
+              "RelativeToolTip": "Imagination.Web\\wwwroot\\assets\\css\\posts-details.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-02T18:49:46.497Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LikeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\Repositories\\LikeRepository.cs",
-              "RelativeDocumentMoniker": "Imagination.Infrastructure\\Services\\Repositories\\LikeRepository.cs",
-              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\Repositories\\LikeRepository.cs*",
-              "RelativeToolTip": "Imagination.Infrastructure\\Services\\Repositories\\LikeRepository.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T11:12:47.451Z",
+              "Title": "_PostsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Home\\_PostsPartial.cshtml",
+              "RelativeDocumentMoniker": "Imagination.Web\\Views\\Home\\_PostsPartial.cshtml",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Home\\_PostsPartial.cshtml",
+              "RelativeToolTip": "Imagination.Web\\Views\\Home\\_PostsPartial.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAAC4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T18:36:23.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ILikeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Application\\Interfaces\\Repositories\\ILikeRepository.cs",
-              "RelativeDocumentMoniker": "Imagination.Application\\Interfaces\\Repositories\\ILikeRepository.cs",
-              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Application\\Interfaces\\Repositories\\ILikeRepository.cs",
-              "RelativeToolTip": "Imagination.Application\\Interfaces\\Repositories\\ILikeRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAKAAAAAAAAAA==",
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Post\\Details.cshtml",
+              "RelativeDocumentMoniker": "Imagination.Web\\Views\\Post\\Details.cshtml",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Post\\Details.cshtml",
+              "RelativeToolTip": "Imagination.Web\\Views\\Post\\Details.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAD0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T09:45:01.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Imagination.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Imagination.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T17:59:26.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Imagination.Web\\Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "Imagination.Web\\Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAJgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T14:53:58.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PostController.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Controllers\\PostController.cs",
+              "RelativeDocumentMoniker": "Imagination.Web\\Controllers\\PostController.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Controllers\\PostController.cs",
+              "RelativeToolTip": "Imagination.Web\\Controllers\\PostController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwC4AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T11:38:09.928Z",
+              "WhenOpened": "2025-05-02T18:18:28.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CheckUserExistsByEmailQuery.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Application\\Features\\Account\\Queries\\CheckUserExistsByEmail\\CheckUserExistsByEmailQuery.cs",
+              "RelativeDocumentMoniker": "Imagination.Application\\Features\\Account\\Queries\\CheckUserExistsByEmail\\CheckUserExistsByEmailQuery.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Application\\Features\\Account\\Queries\\CheckUserExistsByEmail\\CheckUserExistsByEmailQuery.cs",
+              "RelativeToolTip": "Imagination.Application\\Features\\Account\\Queries\\CheckUserExistsByEmail\\CheckUserExistsByEmailQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T16:02:39.254Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\UnitOfWork\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "Imagination.Infrastructure\\Services\\UnitOfWork\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\UnitOfWork\\UnitOfWork.cs",
-              "RelativeToolTip": "Imagination.Infrastructure\\Services\\UnitOfWork\\UnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T12:00:48.946Z",
+              "Title": "_Footer.cshtml",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Shared\\_Footer.cshtml",
+              "RelativeDocumentMoniker": "Imagination.Web\\Views\\Shared\\_Footer.cshtml",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Shared\\_Footer.cshtml",
+              "RelativeToolTip": "Imagination.Web\\Views\\Shared\\_Footer.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T13:18:27.776Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Imagination.Web\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Imagination.Web\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwBgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-02T14:25:37.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Profile\\Index.cshtml",
+              "RelativeDocumentMoniker": "Imagination.Web\\Views\\Profile\\Index.cshtml",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Profile\\Index.cshtml",
+              "RelativeToolTip": "Imagination.Web\\Views\\Profile\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T14:46:14.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Imagination.Web\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Imagination.Web\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T14:54:06.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_CreateCommentPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Home\\_CreateCommentPartial.cshtml",
+              "RelativeDocumentMoniker": "Imagination.Web\\Views\\Home\\_CreateCommentPartial.cshtml",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Views\\Home\\_CreateCommentPartial.cshtml",
+              "RelativeToolTip": "Imagination.Web\\Views\\Home\\_CreateCommentPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T14:53:05.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Imagination.Web\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Imagination.Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T14:47:56.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "Imagination.Web\\Controllers\\BaseController.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "Imagination.Web\\Controllers\\BaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T14:47:55.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Imagination.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Imagination.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCMAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T14:47:45.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PhotoUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Application\\DTOs\\PhotoUserDto.cs",
+              "RelativeDocumentMoniker": "Imagination.Application\\DTOs\\PhotoUserDto.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Application\\DTOs\\PhotoUserDto.cs",
+              "RelativeToolTip": "Imagination.Application\\DTOs\\PhotoUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T14:45:52.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Imagination.Web\\Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Imagination.Web\\Controllers\\ProfileController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T14:45:46.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Post.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Domain\\Entities\\Post.cs",
+              "RelativeDocumentMoniker": "Imagination.Domain\\Entities\\Post.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Domain\\Entities\\Post.cs",
+              "RelativeToolTip": "Imagination.Domain\\Entities\\Post.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:28:32.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PostDto.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Application\\DTOs\\PostDto.cs",
+              "RelativeDocumentMoniker": "Imagination.Application\\DTOs\\PostDto.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Application\\DTOs\\PostDto.cs",
+              "RelativeToolTip": "Imagination.Application\\DTOs\\PostDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T10:48:09.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PostService.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\PostService.cs",
+              "RelativeDocumentMoniker": "Imagination.Infrastructure\\Services\\PostService.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\PostService.cs",
+              "RelativeToolTip": "Imagination.Infrastructure\\Services\\PostService.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAqwFEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T08:48:52.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Imagination.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "Imagination.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:28:36.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "PostRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\Repositories\\PostRepository.cs",
+              "RelativeDocumentMoniker": "Imagination.Infrastructure\\Services\\Repositories\\PostRepository.cs",
+              "ToolTip": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Infrastructure\\Services\\Repositories\\PostRepository.cs",
+              "RelativeToolTip": "Imagination.Infrastructure\\Services\\Repositories\\PostRepository.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T08:49:52.435Z"
             }
           ]
         }

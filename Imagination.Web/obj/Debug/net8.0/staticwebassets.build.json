@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rsn7HRCkA3JxxOpuYXmpgprhZxht5SMUHvDLy5SwUHE=",
+  "Hash": "zEbIgoJWOqo7m0sGTZZW4Tr4oUakJB6jNx0gDkr073I=",
   "Source": "Imagination.Web",
   "BasePath": "_content/Imagination.Web",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\main.css"
+    },
+    {
+      "Identity": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\assets\\css\\posts-details.css",
+      "SourceId": "Imagination.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\",
+      "BasePath": "_content/Imagination.Web",
+      "RelativePath": "assets/css/posts-details.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\posts-details.css"
     },
     {
       "Identity": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\assets\\css\\profile-page.css",
@@ -1022,6 +1041,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\wall.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\assets\\js\\init-tinymce.js",
+      "SourceId": "Imagination.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\",
+      "BasePath": "_content/Imagination.Web",
+      "RelativePath": "assets/js/init-tinymce.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\init-tinymce.js"
     },
     {
       "Identity": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\assets\\js\\main.js",
@@ -3551,12 +3589,12 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\02d30235-e962-4868-8df4-83460a1a6308.png"
     },
     {
-      "Identity": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\Uploads\\88ca7eb5-a1a2-45e0-90e2-196784b36eaa.jpg",
+      "Identity": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\Uploads\\144c3326-7174-40f2-af73-1bc295c4f1a0.jpg",
       "SourceId": "Imagination.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\",
       "BasePath": "_content/Imagination.Web",
-      "RelativePath": "Uploads/88ca7eb5-a1a2-45e0-90e2-196784b36eaa.jpg",
+      "RelativePath": "Uploads/144c3326-7174-40f2-af73-1bc295c4f1a0.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3567,7 +3605,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\88ca7eb5-a1a2-45e0-90e2-196784b36eaa.jpg"
+      "OriginalItemSpec": "wwwroot\\Uploads\\144c3326-7174-40f2-af73-1bc295c4f1a0.jpg"
     }
   ]
 }

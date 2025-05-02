@@ -12,6 +12,7 @@ namespace Imagination.Application.DTOs
         public int Id { get; set; }
         public string Content { get; set; }
         public DateTime DateOfCreation { get; set; }
-        public List<Comment>? Replies { get; set; }
+        public AuthorDto Author { get; set; }
+        public List<CommentDto>? Replies { get; set; }
     }
 }

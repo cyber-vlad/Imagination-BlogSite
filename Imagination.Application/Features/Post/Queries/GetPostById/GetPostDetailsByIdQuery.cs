@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Imagination.Application.Features.Post.Queries.GetPostById
 {
-    public sealed record GetPostDetailsByIdQuery(int postId) : IQuery<PostDto>;
+    public sealed record GetPostDetailsByIdQuery(int postId, int currentUserId) : IQuery<PostDto>;
 
     public class GetPostDetailsByIdQueryHandler : IQueryHandler<GetPostDetailsByIdQuery, PostDto>
     {
@@ -23,7 +23,7 @@ namespace Imagination.Application.Features.Post.Queries.GetPostById
 
         public async Task<PostDto> Handle(GetPostDetailsByIdQuery query, CancellationToken cancellationToken)
         {
-            return await _postService.GetPostDetailsByIdAsync(query.postId);
+            return await _postService.GetPostDetailsByIdAsync(query.postId, query.currentUserId);
         }
     }
 }

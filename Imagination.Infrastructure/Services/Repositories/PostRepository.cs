@@ -47,9 +47,12 @@ namespace Imagination.Infrastructure.Services.Repositories
         public async Task<Post?> GetPostByIdAsync(int postId)
         {
             return await _context.Posts
-                .Include(p => p.Comments)
-                .Include(p => p.Likes)
-                .FirstOrDefaultAsync(p => p.Id == postId);
+                        .Include(p => p.Comments)
+                            .ThenInclude(r => r.Replies)
+                        .Include(p => p.Comments)
+                            .ThenInclude(r => r.User)
+                        .Include(p => p.Likes)
+                        .FirstOrDefaultAsync(p => p.Id == postId);
         }
     }
 }

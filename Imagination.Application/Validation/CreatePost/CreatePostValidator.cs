@@ -23,7 +23,7 @@ namespace Imagination.Application.Validation.CreatePost
 
             RuleFor(x => x.Content)
                 .NotEmpty().WithMessage("Content is required")
-                .MaximumLength(4000).WithMessage("Content MAXIM 4000 characters");
+                .MaximumLength(6000).WithMessage("Content MAXIM 4000 characters");
         }
     }
 }

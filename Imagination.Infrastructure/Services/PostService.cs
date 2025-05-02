@@ -65,7 +65,7 @@ namespace Imagination.Infrastructure.Services
                     DateOfCreation = post.DateOfCreation,
                     NrLikes = post.NrLikes,
                     NrComments = post.NrComments,
-                    Author = new AuthorPostDto
+                    Author = new AuthorDto
                     {
                         Username = author.Username,
                         PhotoUrl = author.PhotoUrl
@@ -77,7 +77,7 @@ namespace Imagination.Infrastructure.Services
             return postDtos;
         }
 
-        public async Task<PostDto> GetPostDetailsByIdAsync(int postId)
+        public async Task<PostDto> GetPostDetailsByIdAsync(int postId, int currentUserId)
         {
             var result = await _postRepository.GetPostByIdAsync(postId);
             if (result is null) return null;
@@ -92,14 +92,36 @@ namespace Imagination.Infrastructure.Services
                 DateOfCreation = result.DateOfCreation,
                 NrLikes = result.NrLikes,
                 NrComments = result.NrComments,
-                Author = new AuthorPostDto
+                Author = new AuthorDto
                 {
                     Username = authorPost.Username,
                     PhotoUrl= authorPost.PhotoUrl,
                 },
+                Comments = result.Comments?
+                    .Select(MapCommentToDto)
+                    .ToList(),
+                IsLikedByCurrentUser = result.Likes?.Any(l => l.UserId == currentUserId) ?? false
             };
 
             return post;
+        }
+        private CommentDto MapCommentToDto(Comment comment)
+        {
+            if (comment is null)
+                return null;
+
+            return new CommentDto
+            {
+                Id = comment.Id,
+                Content = comment.Content,
+                DateOfCreation = comment.DateOfCreation,
+                Author = new AuthorDto
+                {
+                    Username = comment.User.Username,
+                    PhotoUrl = comment.User.PhotoUrl,
+                },
+                Replies = comment.Replies?.Where(r => r != null).Select(MapCommentToDto).ToList() ?? new List<CommentDto>()
+            };
         }
 
         public async Task<ToggledLikeResponse> ToggleLikeAsync(ToggleLikeDto model)
@@ -134,9 +156,43 @@ namespace Imagination.Infrastructure.Services
 
         public async Task<CreatedCommentResponse> CreateCommentAsync(CreateCommentDto model)
         {
-            var response = await _commentRepositor.AddCommentAsync(model);
-            return new CreatedCommentResponse();
-        }
+            try
+            {
+                var resultPost = await _postRepository.GetPostByIdAsync(model.PostId);
 
+                if(model.ParentCommentId is null)
+                {
+                    await _commentRepositor.AddCommentAsync(new Comment { 
+                        Content = model.Content,
+                        DateOfCreation = DateTime.Now,
+                        UserId = model.UserId,
+                        PostId = model.PostId,
+                        ParentCommentId = model.ParentCommentId,
+                    });
+                    resultPost.NrComments++;
+
+                    await _unitOfWork.SaveChangesAsync();
+                    return new CreatedCommentResponse { ErrorCode = Domain.Enum.ErrorCode.NoError, NrComments = resultPost.NrComments };
+                }
+                else
+                {
+                    
+                    
+                    
+                    // TO DO: Comment Replies
+
+
+
+
+
+                    return new CreatedCommentResponse { ErrorCode = Domain.Enum.ErrorCode.Internal_error, ErrorMessage = "Creating comment failed" };
+
+                }
+            }
+            catch(Exception ex)
+            {
+                return new CreatedCommentResponse { ErrorCode = Domain.Enum.ErrorCode.Internal_error, ErrorMessage = "Creating comment failed" };
+            }
+        }
     }
 }

@@ -21,6 +21,5 @@ namespace Imagination.Domain.Entities
         public Comment ParentComment { get; set; }
 
         public ICollection<Comment> Replies { get; set; } = new List<Comment>();
-
     }
 }

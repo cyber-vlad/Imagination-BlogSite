@@ -28,6 +28,7 @@ namespace Imagination.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> EditProfileImage(PhotoUserDto model)
         {
+            model.IdUser = GetUserClaims().Result.Id;
             var response = await _mediator.Send(new EditProfileImageCommand(model));
 
             switch (response.ErrorCode)

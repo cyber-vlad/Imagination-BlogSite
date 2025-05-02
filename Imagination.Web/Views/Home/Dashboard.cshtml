@@ -4,8 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
-
 <div class="container">
     <div class="row">
         <div class="col-xl-5">
@@ -111,6 +109,13 @@
                             $("#btnShowModal").click(function () {
                                 $.get("@Url.Action("CreatePost", "Post")", function (data) {
                                     $('.modal-body').html(data);
+
+                                    // Reinițializează editorul
+                                    if (typeof tinymce !== 'undefined') {
+                                        tinymce.remove(); // elimină instanțele vechi
+                                        initTinyEditor(); // creează din nou
+                                    }
+
                                     var modal = new bootstrap.Modal(document.getElementById('Modal'));
                                     modal.show();
                                 });
@@ -118,6 +123,11 @@
 
                             $(document).on('submit', '#createPostForm', function (e) {
                                 e.preventDefault();
+
+                                // Salvează conținutul editorului înainte de trimis
+                                if (typeof tinymce !== 'undefined') {
+                                    $('#myTextarea').val(tinymce.get('myTextarea').getContent());
+                                }
 
                                 $.ajax({
                                     url: $(this).attr('action'),
@@ -128,12 +138,19 @@
                                             window.location.href = '@Url.Action("Dashboard", "Home")';
                                         } else {
                                             $('.modal-body').html(response);
+
+                                            // Reinițializează editorul din nou după POST invalid
+                                            if (typeof tinymce !== 'undefined') {
+                                                tinymce.remove();
+                                                initTinyEditor();
+                                            }
                                         }
                                     }
                                 });
                             });
                         });
                     </script>
+
 
 
                     <nav class="filter-nav">

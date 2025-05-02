@@ -20,9 +20,10 @@ namespace Imagination.Infrastructure.Services.Repositories
             _context = context;
         }
 
-        public async Task<BaseResponse> AddCommentAsync(CreateCommentDto model)
+        public async Task AddCommentAsync(Comment comment)
         {
-            return new CreatedCommentResponse();
+            await _context.Comments.AddAsync(comment);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<Comment?> GetCommentByIdAsync(int commentId)

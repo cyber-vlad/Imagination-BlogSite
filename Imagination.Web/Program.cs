@@ -31,7 +31,6 @@ namespace Imagination.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddPaging();
             builder.Services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);

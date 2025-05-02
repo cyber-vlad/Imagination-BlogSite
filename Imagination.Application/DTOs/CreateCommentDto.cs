@@ -12,6 +12,6 @@ namespace Imagination.Application.DTOs
         public string Content { get; set; }
         public int UserId { get; set; }
         public int PostId { get; set; }
-        public int? ParentCommentId { get; set; } = 0;
+        public int? ParentCommentId { get; set; }
     }
 }

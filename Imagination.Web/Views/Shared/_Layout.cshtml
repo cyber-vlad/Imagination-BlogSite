@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Imagination.Web.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/dropdown-button.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/assets/css/posts-details.css" asp-append-version="true" />
 
 
     <!-- Toastr CSS -->
@@ -40,6 +41,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
 
 
 
@@ -102,7 +104,6 @@
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script>
-
         $(document).ready(function () {
             var errorMessage = '@TempData["ErrorMessage"]';
             var successMessage = '@TempData["SuccessMessage"]';
@@ -115,7 +116,6 @@
         });
     </script>
 
-
     <!-- Main JS File -->
     <script src="/assets/js/main.js"></script>
     
@@ -123,6 +123,8 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript"></script>
+    <script src="~/assets/js/init-tinymce.js"></script>
+    <script src="https://cdn.tiny.cloud/1/jojphmoplgqms66cwqdr8c3rac1xkcydwne9vx6sl4vk1fgv/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

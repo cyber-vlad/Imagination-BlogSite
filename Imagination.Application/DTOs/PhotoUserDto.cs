@@ -9,7 +9,7 @@ namespace Imagination.Application.DTOs
 {
     public class PhotoUserDto
     {
-        public int IdUser { get; set; }
+        public int IdUser { get; set; } = 0;
         public IFormFile ProfileImage { get; set; }
     }
 }

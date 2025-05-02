@@ -13,7 +13,7 @@ namespace Imagination.Application.Interfaces
     {
         Task<BaseResponse> CreatePostAsync(CreatePostDto model);
         Task<List<PostDto>> GetAllPostsForCurrentUserAsync(int currentUserId);
-        Task<PostDto> GetPostDetailsByIdAsync(int postId);
+        Task<PostDto> GetPostDetailsByIdAsync(int postId, int currentUserId);
         Task<ToggledLikeResponse> ToggleLikeAsync(ToggleLikeDto model);
         Task<CreatedCommentResponse> CreateCommentAsync(CreateCommentDto model);
     }

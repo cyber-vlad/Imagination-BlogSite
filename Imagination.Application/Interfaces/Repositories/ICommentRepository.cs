@@ -11,7 +11,7 @@ namespace Imagination.Application.Interfaces.Repositories
 {
     public interface ICommentRepository
     {
-        Task<BaseResponse> AddCommentAsync(CreateCommentDto model);
+        Task AddCommentAsync(Comment comment);
         Task<Comment?> GetCommentByIdAsync(int commentId);
         
     }

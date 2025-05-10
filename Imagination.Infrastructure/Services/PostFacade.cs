@@ -1,6 +1,8 @@
 ﻿using Imagination.Application.DTOs;
 using Imagination.Application.Interfaces;
 using Imagination.Application.Interfaces.Repositories;
+using Imagination.Application.Patterns.ChainOfResponsability;
+using Imagination.Application.Patterns.Facade;
 using Imagination.Application.Responses;
 using Imagination.Domain.Entities;
 using Imagination.Infrastructure.Services.Repositories;
@@ -12,21 +14,23 @@ using System.Threading.Tasks;
 
 namespace Imagination.Infrastructure.Services
 {
-    public class PostService : IPostService
+    public class PostFacade : IPostFacade
     {
         private readonly IPostRepository _postRepository;
         private readonly IUserRepository _userRepository;
-        private readonly ILikeRepository _likeRepositor;
-        private readonly ICommentRepository _commentRepositor;
+        private readonly ILikeRepository _likeRepository;
+        private readonly ICommentRepository _commentRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ICommentHandler _commentHandler;
 
-        public PostService(IPostRepository postRepository, IUserRepository userRepository, ILikeRepository likeRepositor, ICommentRepository commentRepository, IUnitOfWork unitOfWork)
+        public PostFacade(IPostRepository postRepository, IUserRepository userRepository, ILikeRepository likeRepository, ICommentRepository commentRepository, IUnitOfWork unitOfWork, ICommentHandler commentHandler)
         {
             _postRepository = postRepository;
             _userRepository = userRepository;
-            _likeRepositor = likeRepositor;
-            _commentRepositor = commentRepository;
+            _likeRepository = likeRepository;
+            _commentRepository = commentRepository;
             _unitOfWork = unitOfWork;
+            _commentHandler = commentHandler;
         }
 
         public async Task<BaseResponse> CreatePostAsync(CreatePostDto model)
@@ -120,6 +124,7 @@ namespace Imagination.Infrastructure.Services
                     Username = comment.User.Username,
                     PhotoUrl = comment.User.PhotoUrl,
                 },
+                ParentCommentId = comment.ParentCommentId,
                 Replies = comment.Replies?.Where(r => r != null).Select(MapCommentToDto).ToList() ?? new List<CommentDto>()
             };
         }
@@ -128,12 +133,12 @@ namespace Imagination.Infrastructure.Services
         {
             try
             {
-                var resultLike = await _likeRepositor.GetLikeByPostUserId(model.PostId, model.UserId);
+                var resultLike = await _likeRepository.GetLikeByPostUserId(model.PostId, model.UserId);
                 var resultPost = await _postRepository.GetPostByIdAsync(model.PostId);
 
                 if(resultLike is null)
                 {
-                    await _likeRepositor.AddLikeAsync(new Like { UserId = model.UserId, PostId = model.PostId });
+                    await _likeRepository.AddLikeAsync(new Like { UserId = model.UserId, PostId = model.PostId });
                     resultPost.NrLikes++;
 
                     await _unitOfWork.SaveChangesAsync();
@@ -141,7 +146,7 @@ namespace Imagination.Infrastructure.Services
                 }
                 else
                 {
-                    await _likeRepositor.RemoveLikeAsync(resultLike);
+                    await _likeRepository.RemoveLikeAsync(resultLike);
                     resultPost.NrLikes--;
 
                     await _unitOfWork.SaveChangesAsync();
@@ -158,36 +163,12 @@ namespace Imagination.Infrastructure.Services
         {
             try
             {
-                var resultPost = await _postRepository.GetPostByIdAsync(model.PostId);
+                var post = await _postRepository.GetPostByIdAsync(model.PostId);
+                
+                if (post is null)
+                    return new CreatedCommentResponse { ErrorCode = Domain.Enum.ErrorCode.Internal_error, ErrorMessage = "Post is not found" };
 
-                if(model.ParentCommentId is null)
-                {
-                    await _commentRepositor.AddCommentAsync(new Comment { 
-                        Content = model.Content,
-                        DateOfCreation = DateTime.Now,
-                        UserId = model.UserId,
-                        PostId = model.PostId,
-                        ParentCommentId = model.ParentCommentId,
-                    });
-                    resultPost.NrComments++;
-
-                    await _unitOfWork.SaveChangesAsync();
-                    return new CreatedCommentResponse { ErrorCode = Domain.Enum.ErrorCode.NoError, NrComments = resultPost.NrComments };
-                }
-                else
-                {
-                    
-                    
-                    
-                    // TO DO: Comment Replies
-
-
-
-
-
-                    return new CreatedCommentResponse { ErrorCode = Domain.Enum.ErrorCode.Internal_error, ErrorMessage = "Creating comment failed" };
-
-                }
+                return await _commentHandler.HandleAsync(model, post);
             }
             catch(Exception ex)
             {

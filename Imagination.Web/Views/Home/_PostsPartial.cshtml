@@ -81,45 +81,7 @@
             <div class="btn btn-sm btn-link text-muted" ><i class="mdi mdi-comment"></i> Comments (<span id="comment-count-@post.PostId">@post.NrComments</span>)</div>
         </div>
 
-        @await Html.PartialAsync("_CreateCommentPartial", new Imagination.Application.DTOs.CreateCommentDto { PostId = post.PostId})
+        @await Html.PartialAsync("_CreateCommentPartial", new Imagination.Application.DTOs.CreateCommentDto { PostId = post.PostId })
 
     </div>
 }
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('form[id^="createCommentForm_"]').each(function () {
-            var $form = $(this);
-
-            $form.on('submit', function (e) {
-                e.preventDefault();
-
-                var postId = $form.data("post-id");
-                var commentCountSpan = $("#comment-count-" + postId);
-
-                var $commentInput = $form.find('input[name="Content"]');
-                var $submitButton = $form.find('button[type="submit"]');
-
-                if ($commentInput.val().trim() === "") return;
-
-                $submitButton.prop('disabled', true);
-
-                $.ajax({
-                    url: $form.attr('action'),
-                    type: 'POST',
-                    data: $form.serialize(),
-                    success: function (response) {
-                        if (response.success) {
-                            $commentInput.val('');
-                            commentCountSpan.text(response.commentCount);
-                        }
-                    },
-                    complete: function () {
-                        $submitButton.prop('disabled', false);
-                    }
-                });
-            });
-        });
-    });
-
-</script>

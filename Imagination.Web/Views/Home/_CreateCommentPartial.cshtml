@@ -8,7 +8,7 @@
         <input type="hidden" name="PostId" value="@Model.PostId" />
         <input type="text" id="@inputId" name="Content" class="form-control border-0 form-control-sm me-2"
                style="max-height: 20px;" placeholder="Add comment" />
-        <button type="submit" class="btn btn-primary btn-sm">Send</button>
+        <button onclick="createCommentBtn(this)" type="submit" class="btn btn-primary btn-sm">Send</button>
         <span asp-validation-for="Content" class="text-danger"></span>
     </div>
 </form>

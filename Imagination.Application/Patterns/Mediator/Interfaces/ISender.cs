@@ -14,8 +14,6 @@ namespace Imagination.Application.Patterns.Mediator.Interfaces
     {
         Task<TResponse> Send<TResponse>(ICommand<TResponse> request, CancellationToken cancellationToken = default);
         Task<TResponse> Send<TResponse>(IQuery<TResponse> request, CancellationToken cancellationToken = default);
-
         //Task<BaseResponse?> Send(object request, CancellationToken cancellationToken = default);
-
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Imagination.Application.DTOs;
 using Imagination.Application.Features.Dashboard.Queries.GetAllPosts;
-using Imagination.Application.Interfaces;
 using Imagination.Application.Patterns.CQRS;
+using Imagination.Application.Patterns.Facade;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +14,16 @@ namespace Imagination.Application.Features.Post.Queries.GetPostById
 
     public class GetPostDetailsByIdQueryHandler : IQueryHandler<GetPostDetailsByIdQuery, PostDto>
     {
-        private readonly IPostService _postService;
+        private readonly IPostFacade _postFacade;
 
-        public GetPostDetailsByIdQueryHandler(IPostService postService)
+        public GetPostDetailsByIdQueryHandler(IPostFacade postFacade)
         {
-            _postService = postService;
+            _postFacade = postFacade;
         }
 
         public async Task<PostDto> Handle(GetPostDetailsByIdQuery query, CancellationToken cancellationToken)
         {
-            return await _postService.GetPostDetailsByIdAsync(query.postId, query.currentUserId);
+            return await _postFacade.GetPostDetailsByIdAsync(query.postId, query.currentUserId);
         }
     }
 }

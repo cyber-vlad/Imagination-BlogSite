@@ -1,6 +1,6 @@
 ﻿using Imagination.Application.DTOs;
-using Imagination.Application.Interfaces;
 using Imagination.Application.Patterns.CQRS;
+using Imagination.Application.Patterns.Facade;
 using Imagination.Application.Responses;
 using Imagination.Domain.Entities;
 using System;
@@ -15,16 +15,16 @@ namespace Imagination.Application.Features.Dashboard.Queries.GetAllPosts
 
     public class GetAllPostsForCurrentUserQueryHandler : IQueryHandler<GetAllPostsForCurrentUserQuery, List<PostDto>>
     {
-        private readonly IPostService _postService;
+        private readonly IPostFacade _postFacade;
 
-        public GetAllPostsForCurrentUserQueryHandler(IPostService postService)
+        public GetAllPostsForCurrentUserQueryHandler(IPostFacade postFacade)
         {
-            _postService = postService;
+            _postFacade = postFacade;
         }
 
         public async Task<List<PostDto>> Handle(GetAllPostsForCurrentUserQuery query, CancellationToken cancellationToken)
         {
-            return await _postService.GetAllPostsForCurrentUserAsync(query.currentUserId);
+            return await _postFacade.GetAllPostsForCurrentUserAsync(query.currentUserId);
         }
     }
 }

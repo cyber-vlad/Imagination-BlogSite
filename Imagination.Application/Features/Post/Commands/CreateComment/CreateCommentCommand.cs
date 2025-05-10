@@ -1,6 +1,6 @@
 ﻿using Imagination.Application.DTOs;
-using Imagination.Application.Interfaces;
 using Imagination.Application.Patterns.CQRS;
+using Imagination.Application.Patterns.Facade;
 using Imagination.Application.Responses;
 using System;
 using System.Collections.Generic;
@@ -15,15 +15,15 @@ namespace Imagination.Application.Features.Post.Commands.CreateComment
 
     internal sealed class CreateCommentCommandHandler : ICommandHandler<CreateCommentCommand, CreatedCommentResponse>
     {
-        private readonly IPostService _postService;
-        public CreateCommentCommandHandler(IPostService postService)
+        private readonly IPostFacade _postFacade;
+        public CreateCommentCommandHandler(IPostFacade postFacade)
         {
-            _postService = postService;
+            _postFacade = postFacade;
         }
 
         public async Task<CreatedCommentResponse> Handle(CreateCommentCommand command, CancellationToken cancellationToken)
         {
-            return await _postService.CreateCommentAsync(command.model);
+            return await _postFacade.CreateCommentAsync(command.model);
         }
     }
 }

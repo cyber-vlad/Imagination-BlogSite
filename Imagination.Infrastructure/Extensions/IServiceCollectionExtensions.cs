@@ -16,6 +16,9 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Imagination.Application.Patterns.Singleton;
 using Imagination.Infrastructure.Services.UnitOfWork;
+using Imagination.Application.Patterns.ChainOfResponsability;
+using Imagination.Infrastructure.Handlers.Comments;
+using Imagination.Application.Patterns.Facade;
 
 namespace Imagination.Infrastructure.Extensions
 {
@@ -24,6 +27,7 @@ namespace Imagination.Infrastructure.Extensions
         public static void AddInfrastructureLayer(this IServiceCollection services)
         {
             services.AddServices();
+            services.AddChainOfResponsability();
             //services.AddProxy();
         }
 
@@ -54,8 +58,27 @@ namespace Imagination.Infrastructure.Extensions
                 .AddScoped<IPostRepository, PostRepository>()
                 .AddScoped<ILikeRepository, LikeRepository>()
                 .AddScoped<ICommentRepository, CommentRepository>()
-                .AddScoped<IPostService, PostService>()
+                .AddScoped<IPostFacade, PostFacade>()
                 .AddScoped<IUnitOfWork, UnitOfWork>();
+                //.AddScoped<ICommentHandler, CommentHandler>();
+
+
+        }
+
+        private static void AddChainOfResponsability(this IServiceCollection services)
+        {
+            services.AddTransient<ParentCommentHandler>();
+            services.AddTransient<ReplyCommentHandler>();
+
+            services.AddTransient<ICommentHandler>(sp =>
+            {
+                var parentHandler = sp.GetRequiredService<ParentCommentHandler>();
+                var replyHandler = sp.GetRequiredService<ReplyCommentHandler>();
+
+                parentHandler.SetSuccessor(replyHandler);
+
+                return parentHandler;
+            });
         }
     }
 }

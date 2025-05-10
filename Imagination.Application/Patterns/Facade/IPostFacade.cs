@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imagination.Application.Interfaces
+namespace Imagination.Application.Patterns.Facade
 {
-    public interface IPostService
+    public interface IPostFacade
     {
         Task<BaseResponse> CreatePostAsync(CreatePostDto model);
         Task<List<PostDto>> GetAllPostsForCurrentUserAsync(int currentUserId);

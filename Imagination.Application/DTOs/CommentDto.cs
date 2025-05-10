@@ -13,6 +13,7 @@ namespace Imagination.Application.DTOs
         public string Content { get; set; }
         public DateTime DateOfCreation { get; set; }
         public AuthorDto Author { get; set; }
+        public int? ParentCommentId { get; set; }
         public List<CommentDto>? Replies { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using Imagination.Application.Patterns.ChainOfResponsability;
 using Imagination.Application.Patterns.Facade;
 using Imagination.Application.Responses;
 using Imagination.Domain.Entities;
+using Imagination.Domain.Enum;
 using Imagination.Infrastructure.Services.Repositories;
 using System;
 using System.Collections.Generic;
@@ -45,9 +46,16 @@ namespace Imagination.Infrastructure.Services
                 NrComments = 0,
                 AuthorId = model.AuthorId,
             };
-            var response = await _postRepository.AddPostAsync(post);
-            if (response.ErrorCode == Domain.Enum.ErrorCode.NoError) return new BaseResponse { ErrorCode = Domain.Enum.ErrorCode.NoError };
-            return new BaseResponse { ErrorCode = Domain.Enum.ErrorCode.Create_post_failed, ErrorMessage = "Create post failed"};
+
+            try
+            {
+                await _postRepository.AddPostAsync(post);
+                return new BaseResponse { ErrorCode = ErrorCode.NoError };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse { ErrorCode = Domain.Enum.ErrorCode.Create_post_failed, ErrorMessage = "Create post failed" };
+            }
         }
 
         public async Task<List<PostDto>> GetAllPostsForCurrentUserAsync(int currentUserId)
@@ -173,6 +181,96 @@ namespace Imagination.Infrastructure.Services
             catch(Exception ex)
             {
                 return new CreatedCommentResponse { ErrorCode = Domain.Enum.ErrorCode.Internal_error, ErrorMessage = "Creating comment failed" };
+            }
+        }
+
+        public async Task<List<PostDto>> GetAllPostsByAuthorIdAsync(int authorId)
+        {
+            try
+            {
+                var postsReceived = await _postRepository.GetAllPostsByAuthorId(authorId);
+                
+                if (postsReceived is null) return null;
+                
+                var posts = new List<PostDto>();
+                foreach(var post in postsReceived)
+                {
+                    posts.Add(new PostDto
+                    {
+                        PostId = post.Id,
+                        Content = post.Content,
+                        Title = post.Title,
+                        Category = post.Category,
+                        DateOfCreation = post.DateOfCreation,
+                        NrComments = post.NrComments,
+                        NrLikes = post.NrLikes,
+                    });
+                }
+
+                return posts;
+            }
+            catch(Exception ex)
+            {
+                return new List<PostDto>();
+            }
+        }
+
+        public async Task<BaseResponse> DeletePostAsync(int postId)
+        {
+            try
+            {
+                await _postRepository.DeletePostAsync(postId);
+                await _unitOfWork.SaveChangesAsync();
+                return new BaseResponse { ErrorCode = Domain.Enum.ErrorCode.NoError, ErrorMessage = "Deleting post failed" };
+            }
+            catch(Exception ex)
+            {
+                return new BaseResponse { ErrorCode = Domain.Enum.ErrorCode.Delete_post_failed, ErrorMessage = "Deleting post failed" };
+            }
+        }
+
+        public async Task<PostDto> GetAuthorPostByIdAsync(int postId, int authorId)
+        {
+            try
+            {
+                var post = await _postRepository.GetPostByIdAsync(postId);
+                if (post is not null && post.AuthorId == authorId)
+                {
+                    return new PostDto
+                    {
+                        PostId = post.Id,
+                        Title = post.Title,
+                        Content = post.Content,
+                        DateOfCreation = post.DateOfCreation,
+                        Category = post.Category,
+                    };
+                }
+
+                return null;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<BaseResponse> EditPostAsync(EditPostDto model)
+        {
+            try
+            {
+                var post = await _postRepository.GetPostByIdAsync(model.PostId);
+                post.Title = model.Title;
+                post.Content = model.Content;
+                post.Category = model.Category;
+
+                await _postRepository.UpdatePostAsync(post);
+
+                return new BaseResponse { ErrorCode = Domain.Enum.ErrorCode.NoError };
+
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse { ErrorCode = Domain.Enum.ErrorCode.Internal_error, ErrorMessage = "Editing post failed" };
             }
         }
     }

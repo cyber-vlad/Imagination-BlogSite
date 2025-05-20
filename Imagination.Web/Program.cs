@@ -71,6 +71,12 @@ namespace Imagination.Web
 
             app.UseSession();
 
+            using (var scope = app.Services.CreateScope() )
+            {
+                var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                context.Database.Migrate();
+            }
+
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
@@ -78,7 +84,7 @@ namespace Imagination.Web
                 name: "postDetails",
                 pattern: "Post/{id}",
                 defaults: new { controller = "Post", action = "Details" });
- 
+
             app.Run();
         }
     }

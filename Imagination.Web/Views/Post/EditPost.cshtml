@@ -1,0 +1,93 @@
+﻿@using Imagination.Application.DTOs;
+@model PostDto;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="body-profile">
+    <div class="container bootstrap snippets bootdey">
+        <div class="page-margins">
+            <div class="post-container">
+                <form id="editPostForm" asp-controller="Post" asp-action="EditPost" class="comment-area-box mb-3" method="POST" autocomplete="off">
+                    @Html.AntiForgeryToken()
+
+                    <div class="title-category-row">
+                        <input type="hidden" name="PostId" value="@Model.PostId">
+                        <input type="text" class="form-control title-input" asp-for="Title" placeholder="Enter title...">
+                        <span asp-validation-for="Title" class="text-danger"></span>
+
+                        <select class="form-select category-select" asp-for="Category">
+                            <option selected disabled>Select category</option>
+                            <option value="1">Personal blog</option>
+                            <option value="2">Lifestyle</option>
+                            <option value="3">Technology</option>
+                            <option value="4">Business</option>
+                        </select>
+                        <span asp-validation-for="Category" class="text-danger"></span>
+                    </div>
+
+                    <span class="input-icon">
+                        <textarea class="form-control" id="myTextarea" asp-for="Content" placeholder="Write something..."></textarea>
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </span>
+
+                    <div class="comment-area-btn">
+                        <button type="submit" class="custom-btn">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if (typeof tinymce !== 'undefined') {
+        initTinyEditor();
+    }
+</script>
+<script type="text/javascript">
+
+
+    $(document).on('submit', '#editPostForm', function (e) {
+        e.preventDefault();
+
+        if (typeof tinymce !== 'undefined') {
+            $('#myTextarea').val(tinymce.get('myTextarea').getContent());
+        }
+
+        $.ajax({
+            url: $(this).attr('action'),
+            type: 'POST',
+            data: $(this).serialize(),
+            success: function (response) {
+                if (response.success) {
+                    window.location.href = '@Url.Action("Dashboard", "Home")';
+                } else {
+                    $('.modal-body').html(response);
+
+                    if (typeof tinymce !== 'undefined') {
+                        tinymce.remove();
+                        initTinyEditor();
+                    }
+                }
+            }
+        });
+    });
+                                               
+</script>
+<script>
+    function initTinyEditor() {
+        tinymce.init({
+            selector: '#myTextarea',
+            height: 300,
+            menubar: false,
+            plugins: 'link image code lists',
+            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist | code'
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if (typeof tinymce !== 'undefined') {
+            initTinyEditor();
+        }
+    });
+</script>

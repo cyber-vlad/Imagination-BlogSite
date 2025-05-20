@@ -5,16 +5,13 @@
     Layout = null;
 }
 
-<!-- Formularul -->
 <form id="createPostForm" asp-controller="Post" asp-action="CreatePost" class="comment-area-box mb-3" method="POST" autocomplete="off">
     @Html.AntiForgeryToken()
 
     <div class="title-category-row">
-        <!-- Câmpul Title -->
         <input type="text" class="form-control title-input" asp-for="Title" placeholder="Enter title...">
         <span asp-validation-for="Title" class="text-danger"></span>
 
-        <!-- Câmpul Category -->
         <select class="form-select category-select" asp-for="Category">
             <option selected disabled>Select category</option>
             <option value="1">Personal blog</option>
@@ -25,18 +22,15 @@
         <span asp-validation-for="Category" class="text-danger"></span>
     </div>
 
-    <!-- Câmpul Content -->
     <span class="input-icon">
         <textarea class="form-control" id="myTextarea" asp-for="Content" placeholder="Write something..."></textarea>
         <span asp-validation-for="Content" class="text-danger"></span>
     </span>
 
-    <!-- Butonul de trimitere -->
     <div class="comment-area-btn">
         <button type="submit" class="custom-btn">Post</button>
     </div>
 </form>
-
 
 <script>
     if (typeof tinymce !== 'undefined') {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zC6I2l4S3L4=",
+  "dgSpecHash": "cYMSE4tuuak=",
   "success": true,
   "projectFilePath": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\NUnitTests\\NUnitTests.csproj",
   "expectedPackageFiles": [
@@ -67,6 +67,7 @@
     "C:\\Users\\KramerOxxx\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\KramerOxxx\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.8.0\\microsoft.testplatform.objectmodel.17.8.0.nupkg.sha512",
     "C:\\Users\\KramerOxxx\\.nuget\\packages\\microsoft.testplatform.testhost\\17.8.0\\microsoft.testplatform.testhost.17.8.0.nupkg.sha512",
+    "C:\\Users\\KramerOxxx\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512",
     "C:\\Users\\KramerOxxx\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\KramerOxxx\\.nuget\\packages\\moq\\4.20.72\\moq.4.20.72.nupkg.sha512",
     "C:\\Users\\KramerOxxx\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",

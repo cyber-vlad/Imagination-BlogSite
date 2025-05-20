@@ -62,7 +62,6 @@ namespace Imagination.Infrastructure.Extensions
                 .AddScoped<IUnitOfWork, UnitOfWork>();
                 //.AddScoped<ICommentHandler, CommentHandler>();
 
-
         }
 
         private static void AddChainOfResponsability(this IServiceCollection services)

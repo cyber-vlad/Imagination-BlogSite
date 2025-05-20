@@ -10,6 +10,4 @@ namespace Imagination.Application.Patterns.CQRS
     public interface IQuery<TResponse>
     {
     }
-
-
 }

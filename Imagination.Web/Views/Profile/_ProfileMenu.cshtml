@@ -1,0 +1,61 @@
+﻿@{
+    var currentPath = Context.Request.Path;
+}
+
+<div class="profile-nav col-md-3">
+    <div class="panel">
+        <div class="user-heading round">
+            <a href="#" id="uploadTrigger">
+                @if (!string.IsNullOrEmpty(currentUserService.PhotoUrl))
+                {
+                    <img id="profileImage" src="@Url.Content(currentUserService.PhotoUrl)" />
+                }
+                else
+                {
+                    <img id="profileImage" src="~/assets/img/profile/avatar.jpg">
+                }
+            </a>
+            <form asp-controller="Profile" asp-action="EditProfileImage" method="post" enctype="multipart/form-data" id="UploadForm">
+                <input type="file" id="uploadImage" name="profileImage" style="display: none;" accept="image/*">
+            </form>
+            <h1>@currentUserService.Username</h1>
+            <p>@currentUserService.Email</p>
+
+        </div>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="@(currentPath.ToString().Contains("/Profile/Index") ? "active" : "")">
+                <a asp-action="Index"><i class="fa fa-user"></i> Profile</a>
+            </li>
+            <li class="@(currentPath.ToString().Contains("/Profile/ViewPosts") ? "active" : "")">
+                <a asp-action="ViewPosts"><i class="fa fa-list"></i> Posts</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    document.getElementById("uploadTrigger").addEventListener("click", function (event) {
+        event.preventDefault();
+        document.getElementById("uploadImage").click();
+    });
+
+    document.getElementById("uploadImage").addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("profileImage").src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+        submitForm();
+    });
+
+    function submitForm() {
+        var fileInput = document.getElementById('uploadImage');
+        if (fileInput.files.length > 0) {
+            document.getElementById('UploadForm').submit();
+        }
+    }
+</script>
+

@@ -1,5 +1,6 @@
 ﻿using Azure;
 using Imagination.Application.DTOs;
+using Imagination.Application.Features.Post.Queries.GetPostsByAuthorId;
 using Imagination.Application.Features.Profile.Commands.EditProfileImage;
 using Imagination.Application.Patterns.Mediator.Interfaces;
 using Imagination.Application.Responses;
@@ -19,13 +20,23 @@ namespace Imagination.Web.Controllers
             _mediator = mediator;
         }
 
+        [HttpGet]
         [Authorize]
         public async Task<IActionResult> Index()
         {
             return View("~/Views/Profile/Index.cshtml");
         }
 
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> ViewPosts()
+        {
+            var posts = await _mediator.Send(new GetAllPostsByAuthorIdQuery(GetUserClaims().Result.Id));
+            return View("~/Views/Profile/_ViewPosts.cshtml", posts);
+        }
+
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> EditProfileImage(PhotoUserDto model)
         {
             model.IdUser = GetUserClaims().Result.Id;

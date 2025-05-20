@@ -3,9 +3,14 @@ using Imagination.Application.DTOs;
 using Imagination.Application.Features.Dashboard.Commands.CreatePost;
 using Imagination.Application.Features.Dashboard.Commands.ToggleLike;
 using Imagination.Application.Features.Post.Commands.CreateComment;
+using Imagination.Application.Features.Post.Commands.DeletePost;
+using Imagination.Application.Features.Post.Commands.EditPost;
+using Imagination.Application.Features.Post.Queries.GetAuthorPostById;
 using Imagination.Application.Features.Post.Queries.GetPostById;
+using Imagination.Application.Features.Post.Queries.GetPostsByAuthorId;
 using Imagination.Application.Patterns.Mediator;
 using Imagination.Application.Patterns.Mediator.Interfaces;
+using Imagination.Domain.Entities;
 using Imagination.Domain.Enum;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -65,6 +70,41 @@ namespace Imagination.Web.Controllers
             }
          
             return PartialView("~/Views/Home/Modals/CreatePostModal.cshtml", model);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> DeletePost(int postId)
+        {
+            var response = await _mediator.Send(new DeletePostCommand(postId));
+            
+            if(response.ErrorCode == ErrorCode.Delete_post_failed)
+                return Json(new { success = false });
+            
+            return Json(new { success = true });
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> EditPost(int postId)
+        {
+            var post = await _mediator.Send(new GetAuthorPostByIdQuery(postId, GetUserClaims().Result.Id));
+            if(post is not null) 
+                return View("~/Views/Post/EditPost.cshtml", post);
+            else
+                return RedirectToAction("ViewPosts", "Profile");
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> EditPost(EditPostDto model)
+        {
+            var response = await _mediator.Send(new EditPostCommand(model));
+            if(response.ErrorCode == ErrorCode.NoError)
+            {
+                return RedirectToAction("ViewPosts", "Profile");
+            }
+            return RedirectToAction("ViewPosts", "Profile");
         }
 
         [HttpPost]

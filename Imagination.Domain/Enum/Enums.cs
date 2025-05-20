@@ -19,6 +19,8 @@ namespace Imagination.Domain.Enum
         User_not_found = 8,
         Upload_image_failed = 9,
         Create_post_failed = 10,
+        Delete_post_failed = 11,
+        
     }
 
     public enum UserRole

@@ -9,7 +9,11 @@ using Imagination.Application.Features.Dashboard.Commands.CreatePost;
 using Imagination.Application.Features.Dashboard.Commands.ToggleLike;
 using Imagination.Application.Features.Dashboard.Queries.GetAllPosts;
 using Imagination.Application.Features.Post.Commands.CreateComment;
+using Imagination.Application.Features.Post.Commands.DeletePost;
+using Imagination.Application.Features.Post.Commands.EditPost;
+using Imagination.Application.Features.Post.Queries.GetAuthorPostById;
 using Imagination.Application.Features.Post.Queries.GetPostById;
+using Imagination.Application.Features.Post.Queries.GetPostsByAuthorId;
 using Imagination.Application.Features.Profile.Commands.EditProfileImage;
 using Imagination.Application.Interfaces;
 using Imagination.Application.Interfaces.Repositories;
@@ -74,10 +78,14 @@ namespace Imagination.Application.Extensions
             services.AddTransient<ICommandHandler<CreatePostCommand, BaseResponse>, CreatePostCommandHandler>();
             services.AddTransient<ICommandHandler<ToggleLikeCommand, ToggledLikeResponse>, ToggleLikeCommandHandler>();
             services.AddTransient<ICommandHandler<CreateCommentCommand, CreatedCommentResponse>, CreateCommentCommandHandler>();
+            services.AddTransient<ICommandHandler<EditPostCommand, BaseResponse>, EditPostCommandHandler>();
+            services.AddTransient<ICommandHandler<DeletePostCommand, BaseResponse>, DeletePostCommandHandler>();
             
             services.AddTransient<IQueryHandler<CheckUserExistsByEmailQuery, BaseResponse>, CheckUserExistsByEmailQueryHandler>();
             services.AddTransient<IQueryHandler<GetAllPostsForCurrentUserQuery, List<PostDto>>, GetAllPostsForCurrentUserQueryHandler>();
             services.AddTransient<IQueryHandler<GetPostDetailsByIdQuery, PostDto>, GetPostDetailsByIdQueryHandler>();
+            services.AddTransient<IQueryHandler<GetAllPostsByAuthorIdQuery, List<PostDto>>, GetAllPostsByAuthorIdQueryHandler>();
+            services.AddTransient<IQueryHandler<GetAuthorPostByIdQuery, PostDto>, GetAuthorPostByIdQueryHandler>();
         }
 
         private static void AddMediator(this IServiceCollection services)
@@ -94,6 +102,7 @@ namespace Imagination.Application.Extensions
             services.AddTransient<IValidator<ResetPasswordDto>, ResetPasswordValidator>();
             services.AddTransient<IValidator<EmailAddressDto>, EmailAddressValidator>();
             services.AddTransient<IValidator<CreatePostDto>, CreatePostValidator>();
+            services.AddTransient<IValidator<EditPostDto>, EditPostValidator>();
             services.AddTransient<IValidator<CreateCommentDto>, CreateCommentValidator>();
         }
     }

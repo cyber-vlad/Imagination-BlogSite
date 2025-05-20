@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Imagination.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+429d5eb4e3a1644b7b6f0b9ff52fabc745e6bb8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+757b5e90421ed912909279775a7bd38c01e24519")]
 [assembly: System.Reflection.AssemblyProductAttribute("Imagination.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Imagination.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

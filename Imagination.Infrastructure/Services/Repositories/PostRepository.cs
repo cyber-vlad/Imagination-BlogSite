@@ -23,17 +23,20 @@ namespace Imagination.Infrastructure.Services.Repositories
             _context = context;
         }
 
-        public async Task<BaseResponse> AddPostAsync(Post post)
+        public async Task AddPostAsync(Post post)
         {
-            try
+            await _context.Posts.AddAsync(post);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeletePostAsync(int postId)
+        {
+            var post = await _context.Posts.FindAsync(postId);
+
+            if(post is not null)
             {
-                await _context.Posts.AddAsync(post);
+                _context.Posts.Remove(post);
                 await _context.SaveChangesAsync();
-                return new BaseResponse { ErrorCode = ErrorCode.NoError };
-            }
-            catch (Exception ex)
-            {
-                return new BaseResponse { ErrorCode = ErrorCode.Create_post_failed };
             }
         }
 
@@ -53,6 +56,22 @@ namespace Imagination.Infrastructure.Services.Repositories
                             .ThenInclude(r => r.User)
                         .Include(p => p.Likes)
                         .FirstOrDefaultAsync(p => p.Id == postId);
+        }
+
+        public async Task<List<Post>> GetAllPostsByAuthorId(int authorId)
+        {
+            return await _context.Posts
+                        .Where(p => p.AuthorId == authorId)
+                        .Include(p => p.Likes)
+                        .Include(p => p.Comments)
+                        .ToListAsync();
+                        
+        }
+
+        public async Task UpdatePostAsync(Post post)
+        {
+            _context.Posts.Update(post);
+            await _context.SaveChangesAsync();
         }
     }
 }

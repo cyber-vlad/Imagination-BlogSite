@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Imagination.Application\Imagination.Application.csproj" />
     <ProjectReference Include="..\Imagination.Domain\Imagination.Domain.csproj" />
     <ProjectReference Include="..\Imagination.Persistence\Imagination.Persistence.csproj" />

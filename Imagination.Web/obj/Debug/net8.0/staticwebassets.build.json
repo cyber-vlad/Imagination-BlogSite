@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "v8/bQ3tvin2O9sQFQGSTibWPh9F2XsQEXAtF9ST35vs=",
+  "Hash": "R9vy9DYw+zwRh/gGhWQvHCuka3GWBB2fVHLSnR48lJk=",
   "Source": "Imagination.Web",
   "BasePath": "_content/Imagination.Web",
   "Mode": "Default",
@@ -3589,12 +3589,12 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\02d30235-e962-4868-8df4-83460a1a6308.png"
     },
     {
-      "Identity": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\Uploads\\fad25f46-aaae-4ebc-87e0-574cd1d9aaf7.jpg",
+      "Identity": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\Uploads\\f006fe99-684f-4306-bce8-b8615ad24b57.jpeg",
       "SourceId": "Imagination.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\KramerOxxx\\Desktop\\UTM\\3 year II semester\\TMPP - Tehnici si mecanisme de proiectare a produselor program\\Project\\Imagination\\Imagination.Web\\wwwroot\\",
       "BasePath": "_content/Imagination.Web",
-      "RelativePath": "Uploads/fad25f46-aaae-4ebc-87e0-574cd1d9aaf7.jpg",
+      "RelativePath": "Uploads/f006fe99-684f-4306-bce8-b8615ad24b57.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3605,7 +3605,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\fad25f46-aaae-4ebc-87e0-574cd1d9aaf7.jpg"
+      "OriginalItemSpec": "wwwroot\\Uploads\\f006fe99-684f-4306-bce8-b8615ad24b57.jpeg"
     }
   ]
 }

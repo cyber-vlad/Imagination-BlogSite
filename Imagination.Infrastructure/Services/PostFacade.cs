@@ -248,7 +248,7 @@ namespace Imagination.Infrastructure.Services
 
                 return null;
             }
-            catch(Exception ex)
+            catch
             {
                 return null;
             }

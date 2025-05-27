@@ -19,6 +19,8 @@ using Imagination.Infrastructure.Services.UnitOfWork;
 using Imagination.Application.Patterns.ChainOfResponsability;
 using Imagination.Infrastructure.Handlers.Comments;
 using Imagination.Application.Patterns.Facade;
+using Imagination.Infrastructure.Services.Repositories.CachedPostRepository;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace Imagination.Infrastructure.Extensions
 {
@@ -55,11 +57,17 @@ namespace Imagination.Infrastructure.Extensions
                 .AddScoped<IProfileService, ProfileService>()
                 .AddScoped<ICurrentUserService, CurrentUserService>()
                 .AddScoped<IUserRepository, UserRepository>()
-                .AddScoped<IPostRepository, PostRepository>()
+                .AddScoped<PostRepository>()
                 .AddScoped<ILikeRepository, LikeRepository>()
                 .AddScoped<ICommentRepository, CommentRepository>()
                 .AddScoped<IPostFacade, PostFacade>()
-                .AddScoped<IUnitOfWork, UnitOfWork>();
+                .AddScoped<IUnitOfWork, UnitOfWork>()
+                .AddScoped<IPostRepository>(provider =>
+                    new CachedPostRepository(
+                        provider.GetRequiredService<PostRepository>(),
+                        provider.GetRequiredService<IDistributedCache>()
+                        ));
+
                 //.AddScoped<ICommentHandler, CommentHandler>();
 
         }
